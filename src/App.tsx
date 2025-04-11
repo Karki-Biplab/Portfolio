@@ -43,10 +43,15 @@ function App() {
         </div>
       </nav>
 
-      <header id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-black text-white pt-24 relative overflow-hidden">
+      <header
+        id="home"
+        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-black text-white pt-24"
+      >
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 transition-opacity duration-700 opacity-0 animate-fade-in">Biplab Karki</h1>
-          <p className="text-xl md:text-2xl text-blue-200 mb-8 transition-opacity duration-700 delay-300 opacity-0 animate-fade-in">Aspiring Software Developer | Passionate about Real-World Projects</p>
+          <p className="text-xl md:text-2xl text-blue-200 mb-8 transition-opacity duration-700 delay-300 opacity-0 animate-fade-in">
+            Aspiring Software Developer | Passionate about Real-World Projects
+          </p>
           <div className="flex justify-center gap-6 transition-opacity duration-700 delay-500 opacity-0 animate-fade-in">
             <a href="https://github.com/Karki-Biplab" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300">
               <Github size={24} />
