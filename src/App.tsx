@@ -63,11 +63,18 @@ export default function BiplabPortfolio() {
     
     // Favicon setup
     const setFavicon = () => {
-      const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-      link.type = 'image/x-icon';
-      link.rel = 'shortcut icon';
-      link.href = '/logo.png'; // Path to your favicon in public folder
-      document.getElementsByTagName('head')[0].appendChild(link);
+      // Create new favicon link element
+      const link = document.createElement('link');
+      link.type = 'image/png';
+      link.rel = 'icon';
+      link.href = '/logo.png';
+      
+      // Remove any existing favicon links
+      const existingLinks = document.querySelectorAll("link[rel*='icon']");
+      existingLinks.forEach(el => el.parentNode.removeChild(el));
+      
+      // Add the new favicon link to the document head
+      document.head.appendChild(link);
       
       // Set page title
       document.title = "Biplab Karki | Portfolio";
