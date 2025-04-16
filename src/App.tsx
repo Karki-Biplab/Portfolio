@@ -109,13 +109,12 @@ export default function BiplabPortfolio() {
       {/* Navigation */}
       <nav className={`fixed w-full bg-white dark:bg-gray-800 bg-opacity-90 text-gray-800 dark:text-white z-50 backdrop-blur-sm shadow-md transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <button onClick={() => scrollToSection('home')} className="flex items-center gap-2 text-xl font-bold hover:text-blue-500 transition-colors">
-            <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
-              BK
-            </div>
-            <span>Biplab</span>
-          </button>
-          
+        <button onClick={() => scrollToSection('home')} className="flex items-center gap-2 text-xl font-bold hover:text-blue-500 transition-colors">
+        <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
+        <span>Biplab</span>
+        </button>
+         
+  
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 items-center">
             {['about', 'skills', 'projects', 'contact'].map(section => (
@@ -215,7 +214,7 @@ export default function BiplabPortfolio() {
         <div className="container mx-auto px-6 text-center z-10">
           <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="mb-6 flex justify-center">
-              <img src="/profile.png" alt="Biplab Karki" className="w-32 h-32 rounded-full border-4 border-white shadow-lg" />
+              <img src="/gitprof.png" alt="Biplab Karki" className="w-32 h-32 rounded-full border-4 border-white shadow-lg" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">Biplab Karki</h1>
             <p className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto">
@@ -531,12 +530,10 @@ export default function BiplabPortfolio() {
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-8">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center mb-4 md:mb-0">
-            <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center text-white mr-2">
-              BK
-            </div>
-            <span className="font-medium">Biplab Karki</span>
-            </div>
+        <div className="flex items-center mb-4 md:mb-0">
+        <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover mr-2" />
+        <span className="font-medium">Biplab Karki</span>
+        </div>
           <div className="text-sm">
             &copy; {new Date().getFullYear()} Biplab Karki. All rights reserved.
           </div>
