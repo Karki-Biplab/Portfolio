@@ -8,7 +8,7 @@ export default function About() {
           </h2>
           <div className="max-w-3xl mx-auto">
             <div className="mb-10 flex justify-center">
-              <img src="/profile.png" alt="Biplab Karki" className="w-48 h-48 rounded-full shadow-xl object-cover transform hover:scale-105 transition-transform" />
+              <img src="/profile.png" alt="Biplab Karki" className="w-48 h-48 rounded-full shadow-xl object-cover transform hover:scale-105 transition-transform hover:shadow-2xl hover:shadow-blue-600 duration-300 ease-in-out" />
             </div>
             <div className="text-lg leading-relaxed space-y-6 dark:text-gray-300">
               <p>

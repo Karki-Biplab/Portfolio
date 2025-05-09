@@ -16,7 +16,7 @@ export default function Header({ scrollToSection }) {
       id="home"
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-800 to-black text-white relative overflow-hidden pt-24"
     >
-      <div className="absolute inset-0">
+      <d  iv className="absolute inset-0">
         {/* Enhanced background with animated pattern */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute inset-0 opacity-20">
@@ -35,12 +35,12 @@ export default function Header({ scrollToSection }) {
             ></div>
           ))}
         </div>
-      </div>
+      </d>
       
       <div className="container mx-auto px-6 text-center z-10">
         <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="mb-6 flex justify-center">
-            <img src="/gitprof.png" alt="Biplab Karki" className="w-32 h-32 rounded-full border-4 border-white shadow-lg" />
+            <img src="/gitprof.png" alt="Biplab Karki" className="w-32 h-32 rounded-full border-4 border-white hover:scale-[1.05] duration-300 ease-in-out hover:shadow-2xl hover:shadow-blue-600   " />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">Biplab Karki</h1>
           <p className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto">
@@ -60,7 +60,7 @@ export default function Header({ scrollToSection }) {
           <div className="mt-12">
             <button 
               onClick={() => scrollToSection('projects')} 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors transform hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors transform hover:scale-105 animate-bounce duration-300"
             >
               View My Projects
             </button>
