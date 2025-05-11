@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Send, User, MessageSquare } from 'lucide-react';
 
 export default function Contact() {
@@ -11,6 +11,12 @@ export default function Contact() {
     isError: false,
     isSubmitting: false
   });
+  const [animated, setAnimated] = useState(false);
+
+  // Animation trigger when component is mounted
+  useEffect(() => {
+    setAnimated(true);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,7 +72,6 @@ export default function Contact() {
       });
     }
 
-
     setTimeout(() => {
       setFormStatus({
         message: '',
@@ -77,6 +82,11 @@ export default function Contact() {
     }, 5000);
   };
 
+  // CSS classes for text animation
+  const fadeIn = "transition-all duration-1000 ease-out";
+  const animatedText = animated ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8";
+  const staggerDelay = (delay) => animated ? `transition-all duration-1000 delay-${delay} ease-out opacity-100 translate-y-0` : "opacity-0 translate-y-8";
+
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-gray-900 to-blue-900 text-white">
       <div className="container mx-auto px-6">
@@ -85,15 +95,22 @@ export default function Contact() {
           <div className="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
         </h2>
         <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          <div className="flex flex-col justify-center">
-            <div className="text-lg mb-8">
-              <p className="mb-6">Interested in collaborating or have an opportunity? Feel free to get in touch!</p>
-              <div className="text-blue-200 mt-8">
+          <div className="flex flex-col justify-center text-center md:text-left">
+            <div className={`text-lg space-y-6 ${fadeIn} ${animatedText}`}>
+              <p className="text-xl leading-relaxed">
+                Interested in collaborating or have an opportunity? Feel free to get in touch!
+              </p>
+              
+              <div className={`text-blue-200 space-y-3 ${fadeIn} ${staggerDelay('200')}`}>
                 <p>Based in Kathmandu, Nepal</p>
-                <p className="mt-2">Available for remote opportunities worldwide</p>
-                <p className="mt-4 font-medium">Let's build something amazing together!</p>
+                <p>Available for remote opportunities worldwide</p>
               </div>
-              <div className="mt-10">
+              
+              <p className={`text-xl font-semibold text-white mt-8 ${fadeIn} ${staggerDelay('300')}`}>
+                Let's build something amazing together!
+              </p>
+              
+              <div className={`mt-8 flex justify-center md:justify-start ${fadeIn} ${staggerDelay('500')}`}>
                 <a 
                   href="mailto:Biplabkarki13@gmail.com" 
                   className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all hover:shadow-lg transform hover:scale-105"
@@ -104,7 +121,7 @@ export default function Contact() {
             </div>
           </div>
           
-          <div className="bg-gray-800 bg-opacity-50 p-8 rounded-xl shadow-2xl">
+          <div className="md:translate-x-6 bg-gray-800 bg-opacity-50 p-8 rounded-xl shadow-2xl transform transition-all duration-700 hover:shadow-blue-900/20 hover:shadow-xl">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
             <div>
               <div className="mb-6">
