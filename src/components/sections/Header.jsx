@@ -60,7 +60,7 @@ export default function Header({ scrollToSection }) {
           <div className="mt-12">
             <button 
               onClick={() => scrollToSection('projects')} 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors transform hover:scale-105 animate-bounce duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors transform hover:scale-105"
             >
               View My Projects
             </button>

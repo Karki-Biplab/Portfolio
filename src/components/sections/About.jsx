@@ -26,7 +26,7 @@ export default function About() {
                 while continuously expanding my technical expertise across various domains.
               </p>
             </div>
-            <div className="mt-10 text-center">
+            <div className="fixed right-6 bottom-10 mt-10 text-center z-[1] animate-bounce duration-300">
               <a 
                 href="/Biplab_Karki_Resume.pdf" 
                 download 
