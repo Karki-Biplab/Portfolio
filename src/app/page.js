@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from 'react';
+import { Analytics } from "@vercel/analytics/next"
 import Navbar from './components/layout/Navbar';
 import Header from './components/sections/Header';
 import About from './components/sections/About';
