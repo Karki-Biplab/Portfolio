@@ -46,31 +46,67 @@ export default function App() {
 
   return (
     <>
-      <Head>
-        <title>Biplab Karki | Portfolio</title>
-        <meta name="description" content="Portfolio of Biplab Karki - Software Developer, Machine Learning Enthusiast, and IoT Innovator" />
-        <meta name="keywords" content="Biplab Karki, Software Developer, Machine Learning, IoT, Portfolio, Web Development" />
-        <meta name="author" content="Biplab Karki" />
-        
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://your-portfolio-url.com/" />
-        <meta property="og:title" content="Biplab Karki | Portfolio" />
-        <meta property="og:description" content="Software Developer, Machine Learning Enthusiast, and IoT Innovator" />
-        <meta property="og:image" content="/gitprof.png" />
-        
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://your-portfolio-url.com/" />
-        <meta property="twitter:title" content="Biplab Karki | Portfolio" />
-        <meta property="twitter:description" content="Software Developer, Machine Learning Enthusiast, and IoT Innovator" />
-        <meta property="twitter:image" content="/gitprof.png" />
-        
-        {/* Viewport and other common meta tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1E40AF" />
-      </Head>
+<Head>
+  {/* Primary Meta Tags */}
+  <title>Biplab Karki | Software Developer & Machine Learning Engineer</title>
+  <meta name="title" content="Biplab Karki | Software Developer & Machine Learning Engineer" />
+  <meta name="description" content="Innovative software developer specializing in web technologies, machine learning, and IoT solutions. Transforming ideas into cutting-edge digital experiences." />
+  
+  {/* Open Graph / Facebook */}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://biplabkarki.com.np/" />
+  <meta property="og:title" content="Biplab Karki - Technology Innovator" />
+  <meta property="og:description" content="Expert in software development, machine learning, and IoT. Creating innovative technological solutions." />
+  <meta property="og:image" content="https://biplabkarki.com.np/og-image.png" />
 
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://biplabkarki.com.np/" />
+  <meta name="twitter:title" content="Biplab Karki | Tech Portfolio" />
+  <meta name="twitter:description" content="Software developer crafting innovative solutions in web, ML, and IoT technologies." />
+  <meta name="twitter:image" content="https://biplabkarki.com.np/twitter-image.png" />
+
+  {/* Additional SEO-Focused Meta Tags */}
+  <meta name="keywords" content="Biplab Karki, Software Developer, Machine Learning, Web Development, IoT, Full Stack Developer, Technology Innovator, React Developer, Next.js" />
+  <meta name="author" content="Biplab Karki" />
+  
+  {/* Canonical Link */}
+  <link rel="canonical" href="https://biplabkarki.com.np/" />
+
+  {/* Viewport and Compatibility */}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="theme-color" content="#1E40AF" />
+
+  {/* Robots Meta Tag */}
+  <meta name="robots" content="index, follow" />
+
+  {/* Geo Tags (Optional - can be customized) */}
+  <meta name="geo.region" content="NP" />
+  <meta name="geo.placename" content="Nepal" />
+
+  {/* Structured Data - JSON-LD */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Biplab Karki",
+      "jobTitle": "Software Developer",
+      "knowsAbout": [
+        "Web Development",
+        "Machine Learning",
+        "Internet of Things",
+        "React",
+        "Next.js"
+      ],
+      "url": "https://biplabkarki.com.np/",
+      "sameAs": [
+        "https://www.linkedin.com/in/biplabkarki13/",
+        "https://github.com/karki-biplab"
+      ]
+    })}
+  </script>
+</Head>
       <ThemeProvider>
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
           <Navbar activeSection={activeSection} showNavbar={showNavbar} />
