@@ -1467,6 +1467,12 @@
     }
   }
 
+  @media (width >= 80rem) {
+    .xl\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
   @media (prefers-color-scheme: dark) {
     .dark\:border-gray-700 {
       border-color: var(--color-gray-700);

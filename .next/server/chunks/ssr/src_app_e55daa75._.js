@@ -793,6 +793,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/code-xml.js [app-ssr] (ecmascript) <export default as Code2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/database.js [app-ssr] (ecmascript) <export default as Database>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cpu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Cpu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/cpu.js [app-ssr] (ecmascript) <export default as Cpu>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/award.js [app-ssr] (ecmascript) <export default as Award>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$SkillCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/SkillCard.jsx [app-ssr] (ecmascript)");
 "use client";
 ;
@@ -805,21 +806,24 @@ function Skills() {
             title: "Programming & Web",
             skills: [
                 "Flutter, Firebase",
-                "Java, Python",
+                "Python, Java",
                 "HTML, CSS, JavaScript",
-                "React, TypeScript",
-                "Responsive Design"
+                "Next.js, React",
+                "Responsive Design",
+                "WordPress"
             ]
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"],
             title: "Database & ML",
             skills: [
-                "MongoDB, MySQL",
+                "Firebase, MongoDB, MySQL",
                 "Scikit-learn, NumPy, Pandas",
                 "ANN, CNN, RNN, LSTM",
                 "Data Analysis & Visualization",
-                "Natural Language Processing"
+                "Natural Language Processing",
+                "Big Data - Hadoop",
+                "NoSQL"
             ]
         },
         {
@@ -830,7 +834,17 @@ function Skills() {
                 "Android Studio",
                 "Figma (UI Design)",
                 "IoT & Hardware Programming",
-                "Docker & Cloud Services"
+                "Docker & Cloud Services",
+                "SEO Optimization"
+            ]
+        },
+        {
+            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"],
+            title: "Languages",
+            skills: [
+                "Nepali (Expert)",
+                "English (Experienced)",
+                "Hindi (Experienced)"
             ]
         }
     ];
@@ -848,40 +862,40 @@ function Skills() {
                             className: "w-24 h-1 bg-blue-500 mx-auto mt-4"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/sections/Skills.jsx",
-                            lineNumber: 47,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/sections/Skills.jsx",
-                    lineNumber: 45,
+                    lineNumber: 58,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8",
                     children: skillsData.map((skill, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$SkillCard$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             icon: skill.icon,
                             title: skill.title,
                             skills: skill.skills
                         }, index, false, {
                             fileName: "[project]/src/app/components/sections/Skills.jsx",
-                            lineNumber: 51,
+                            lineNumber: 64,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/sections/Skills.jsx",
-                    lineNumber: 49,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/components/sections/Skills.jsx",
-            lineNumber: 44,
+            lineNumber: 57,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/sections/Skills.jsx",
-        lineNumber: 43,
+        lineNumber: 56,
         columnNumber: 5
     }, this);
 }

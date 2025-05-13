@@ -1,5 +1,5 @@
 "use client"
-import { Code2, Database, Cpu } from 'lucide-react';
+import { Code2, Database, Cpu, Award } from 'lucide-react';
 import SkillCard from '../ui/SkillCard';
 
 export default function Skills() {
@@ -9,21 +9,24 @@ export default function Skills() {
       title: "Programming & Web",
       skills: [
         "Flutter, Firebase",
-        "Java, Python",
+        "Python, Java",
         "HTML, CSS, JavaScript",
-        "React, TypeScript",
-        "Responsive Design"
+        "Next.js, React",
+        "Responsive Design",
+        "WordPress"
       ]
     },
     {
       icon: Database,
       title: "Database & ML",
       skills: [
-        "MongoDB, MySQL",
+        "Firebase, MongoDB, MySQL",
         "Scikit-learn, NumPy, Pandas",
         "ANN, CNN, RNN, LSTM",
         "Data Analysis & Visualization",
-        "Natural Language Processing"
+        "Natural Language Processing",
+        "Big Data - Hadoop",
+        "NoSQL"
       ]
     },
     {
@@ -34,7 +37,17 @@ export default function Skills() {
         "Android Studio",
         "Figma (UI Design)",
         "IoT & Hardware Programming",
-        "Docker & Cloud Services"
+        "Docker & Cloud Services",
+        "SEO Optimization"
+      ]
+    },
+    {
+      icon: Award,
+      title: "Languages",
+      skills: [
+        "Nepali (Expert)",
+        "English (Experienced)",
+        "Hindi (Experienced)"
       ]
     }
   ];
@@ -46,7 +59,7 @@ export default function Skills() {
           Skills & Tools
           <div className="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {skillsData.map((skill, index) => (
             <SkillCard 
               key={index}
