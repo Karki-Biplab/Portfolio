@@ -12,6 +12,7 @@ import Footer from './components/layout/Footer';
 import useScrollSpy from './hooks/useScrollSpy';
 import { ThemeProvider } from './context/ThemeContext';
 import Head from 'next/head';
+import Experience from './components/sections/Experience';
 
 export default function App() {
   const sections = ['home', 'about', 'skills', 'projects', 'contact'];
@@ -115,6 +116,7 @@ export default function App() {
           <About />
           <Skills />
           <Projects />
+          <Experience />
           <Contact />
           <Footer />
         </div>
