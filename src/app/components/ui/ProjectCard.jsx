@@ -7,7 +7,15 @@ export default function ProjectCard({ project }) {
   return (
     <div className="bg-gray-100 dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden group">
       <div className="h-52 relative overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          onContextMenu={(e) => e.preventDefault()}
+          onDragStart={(e) => e.preventDefault()}
+          style={{ pointerEvents: 'none' }}
+        />
         {demoLink && (
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <a 

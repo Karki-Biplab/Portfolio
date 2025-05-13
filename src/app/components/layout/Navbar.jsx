@@ -21,7 +21,13 @@ export default function Navbar({ activeSection, showNavbar }) {
           onClick={() => scrollToSection('home')} 
           className="flex items-center gap-2 text-xl font-bold hover:text-blue-500 transition-colors"
         >
-          <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="h-8 w-8 rounded-full object-cover mr-2"
+            loading="lazy"
+            style={{ pointerEvents: 'none' }}
+          />
           <span>Biplab</span>
         </button>
        

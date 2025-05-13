@@ -6,7 +6,15 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-400 py-8">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center mb-4 md:mb-0">
-          <img src="/logo.png" alt="Logo" className="h-8 w-8 rounded-full object-cover mr-2" />
+        <img
+          src="/logo.png"
+          alt="Logo"
+          className="h-8 w-8 rounded-full object-cover mr-2"
+          loading="lazy"
+          onContextMenu={(e) => e.preventDefault()}
+          onDragStart={(e) => e.preventDefault()}
+          style={{ pointerEvents: 'none' }}
+        />
           <span className="font-medium">Biplab Karki</span>
         </div>
         <div className="text-sm">

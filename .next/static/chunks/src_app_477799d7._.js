@@ -195,7 +195,11 @@ function Navbar({ activeSection, showNavbar }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: "/logo.png",
                                 alt: "Logo",
-                                className: "h-8 w-8 rounded-full object-cover"
+                                className: "h-8 w-8 rounded-full object-cover mr-2",
+                                loading: "lazy",
+                                style: {
+                                    pointerEvents: 'none'
+                                }
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/Navbar.jsx",
                                 lineNumber: 24,
@@ -205,7 +209,7 @@ function Navbar({ activeSection, showNavbar }) {
                                 children: "Biplab"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                                lineNumber: 25,
+                                lineNumber: 31,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -228,7 +232,7 @@ function Navbar({ activeSection, showNavbar }) {
                                     children: section
                                 }, section, false, {
                                     fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                                    lineNumber: 31,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -239,24 +243,24 @@ function Navbar({ activeSection, showNavbar }) {
                                     size: 20
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                                    lineNumber: 44,
+                                    lineNumber: 50,
                                     columnNumber: 34
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sun$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sun$3e$__["Sun"], {
                                     size: 20
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                                    lineNumber: 44,
+                                    lineNumber: 50,
                                     columnNumber: 55
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                                lineNumber: 39,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                        lineNumber: 29,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -276,7 +280,7 @@ function Navbar({ activeSection, showNavbar }) {
                                 d: "M6 18L18 6M6 6l12 12"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                                lineNumber: 62,
+                                lineNumber: 68,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                 strokeLinecap: "round",
@@ -285,17 +289,17 @@ function Navbar({ activeSection, showNavbar }) {
                                 d: "M4 6h16M4 12h16M4 18h16"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                                lineNumber: 64,
+                                lineNumber: 70,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                            lineNumber: 54,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                        lineNumber: 49,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, this)
                 ]
@@ -311,7 +315,7 @@ function Navbar({ activeSection, showNavbar }) {
                 scrollToSection: scrollToSection
             }, void 0, false, {
                 fileName: "[project]/src/app/components/layout/Navbar.jsx",
-                lineNumber: 72,
+                lineNumber: 78,
                 columnNumber: 9
             }, this)
         ]
@@ -430,11 +434,17 @@ function Header({ scrollToSection }) {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: "/gitprof.png",
                                 alt: "Biplab Karki",
-                                className: "w-32 h-32 rounded-full border-4 border-white hover:scale-[1.05] duration-300 ease-in-out hover:shadow-2xl hover:shadow-blue-600"
+                                className: "w-32 h-32 rounded-full border-4 border-white hover:scale-[1.05] duration-300 ease-in-out hover:shadow-2xl hover:shadow-blue-600",
+                                loading: "lazy",
+                                onContextMenu: (e)=>e.preventDefault(),
+                                onDragStart: (e)=>e.preventDefault(),
+                                style: {
+                                    pointerEvents: 'none'
+                                }
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/sections/Header.jsx",
                                 lineNumber: 56,
-                                columnNumber: 13
+                                columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/sections/Header.jsx",
@@ -446,7 +456,7 @@ function Header({ scrollToSection }) {
                             children: "Biplab Karki"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/sections/Header.jsx",
-                            lineNumber: 58,
+                            lineNumber: 66,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -454,7 +464,7 @@ function Header({ scrollToSection }) {
                             children: "Software Developer | Machine Learning Enthusiast | IoT Innovator"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/sections/Header.jsx",
-                            lineNumber: 59,
+                            lineNumber: 67,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -469,12 +479,12 @@ function Header({ scrollToSection }) {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/sections/Header.jsx",
-                                        lineNumber: 64,
+                                        lineNumber: 72,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/sections/Header.jsx",
-                                    lineNumber: 63,
+                                    lineNumber: 71,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -486,12 +496,12 @@ function Header({ scrollToSection }) {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/sections/Header.jsx",
-                                        lineNumber: 67,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/sections/Header.jsx",
-                                    lineNumber: 66,
+                                    lineNumber: 74,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -501,18 +511,18 @@ function Header({ scrollToSection }) {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/sections/Header.jsx",
-                                        lineNumber: 70,
+                                        lineNumber: 78,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/sections/Header.jsx",
-                                    lineNumber: 69,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/sections/Header.jsx",
-                            lineNumber: 62,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -523,12 +533,12 @@ function Header({ scrollToSection }) {
                                 children: "View My Projects"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/sections/Header.jsx",
-                                lineNumber: 74,
+                                lineNumber: 82,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/sections/Header.jsx",
-                            lineNumber: 73,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this)
                     ]
@@ -646,11 +656,17 @@ function About() {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: "/profile.png",
                                 alt: "Biplab Karki",
-                                className: "w-48 h-48 rounded-full shadow-xl object-cover transform hover:scale-105 transition-transform hover:shadow-2xl hover:shadow-blue-600 duration-300 ease-in-out"
+                                className: "w-48 h-48 rounded-full shadow-xl object-cover transform hover:scale-105 transition-transform hover:shadow-2xl hover:shadow-blue-600 duration-300 ease-in-out",
+                                loading: "lazy",
+                                onContextMenu: (e)=>e.preventDefault(),
+                                onDragStart: (e)=>e.preventDefault(),
+                                style: {
+                                    pointerEvents: 'none'
+                                }
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/sections/About.jsx",
                                 lineNumber: 55,
-                                columnNumber: 13
+                                columnNumber: 12
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/sections/About.jsx",
@@ -664,27 +680,27 @@ function About() {
                                     children: "I am a passionate and self-motivated developer who thrives on learning through hands-on experience. I enjoy solving real-world problems, collaborating with like-minded individuals, and refining my skills through continuous learning."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/sections/About.jsx",
-                                    lineNumber: 62,
+                                    lineNumber: 66,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: "I'm currently pursuing a BSc (Hons) in Computer Science at Herald College Kathmandu. My academic foundation is complemented by several practical projects, ranging from mobile app development using Flutter & Firebase, to data science, machine learning, and IoT innovations."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/sections/About.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 71,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: "My goal is to create technological solutions that make a positive impact on people's lives while continuously expanding my technical expertise across various domains."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/sections/About.jsx",
-                                    lineNumber: 72,
+                                    lineNumber: 76,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/sections/About.jsx",
-                            lineNumber: 61,
+                            lineNumber: 65,
                             columnNumber: 11
                         }, this),
                         isButtonVisible && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -710,12 +726,12 @@ function About() {
                                             d: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/sections/About.jsx",
-                                            lineNumber: 106,
+                                            lineNumber: 110,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/sections/About.jsx",
-                                        lineNumber: 100,
+                                        lineNumber: 104,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -723,7 +739,7 @@ function About() {
                                         children: isSmallScreen ? '' : 'Download Resume'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/sections/About.jsx",
-                                        lineNumber: 113,
+                                        lineNumber: 117,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -731,18 +747,18 @@ function About() {
                                         children: "CV"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/sections/About.jsx",
-                                        lineNumber: 116,
+                                        lineNumber: 120,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/sections/About.jsx",
-                                lineNumber: 87,
+                                lineNumber: 91,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/sections/About.jsx",
-                            lineNumber: 80,
+                            lineNumber: 84,
                             columnNumber: 13
                         }, this)
                     ]
@@ -974,7 +990,13 @@ function ProjectCard({ project }) {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                         src: image,
                         alt: title,
-                        className: "w-full h-full object-cover"
+                        className: "w-full h-full object-cover",
+                        loading: "lazy",
+                        onContextMenu: (e)=>e.preventDefault(),
+                        onDragStart: (e)=>e.preventDefault(),
+                        style: {
+                            pointerEvents: 'none'
+                        }
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
                         lineNumber: 10,
@@ -993,19 +1015,19 @@ function ProjectCard({ project }) {
                                     className: "mr-2"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                                    lineNumber: 19,
+                                    lineNumber: 27,
                                     columnNumber: 15
                                 }, this),
                                 demoLink.includes('youtu') ? 'Watch Demo' : 'Visit Website'
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                            lineNumber: 13,
+                            lineNumber: 21,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                        lineNumber: 12,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, this)
                 ]
@@ -1022,7 +1044,7 @@ function ProjectCard({ project }) {
                         children: title
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                        lineNumber: 26,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1032,12 +1054,12 @@ function ProjectCard({ project }) {
                                 children: tag
                             }, index, false, {
                                 fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                                lineNumber: 29,
+                                lineNumber: 37,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                        lineNumber: 27,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1045,7 +1067,7 @@ function ProjectCard({ project }) {
                         children: description
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                        lineNumber: 34,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, this),
                     demoLink && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1061,7 +1083,7 @@ function ProjectCard({ project }) {
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                                    lineNumber: 38,
+                                    lineNumber: 46,
                                     columnNumber: 15
                                 }, this),
                                 " ",
@@ -1069,18 +1091,18 @@ function ProjectCard({ project }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                            lineNumber: 37,
+                            lineNumber: 45,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                        lineNumber: 36,
+                        lineNumber: 44,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/ui/ProjectCard.jsx",
-                lineNumber: 25,
+                lineNumber: 33,
                 columnNumber: 7
             }, this)
         ]
@@ -1694,18 +1716,24 @@ function Footer() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                             src: "/logo.png",
                             alt: "Logo",
-                            className: "h-8 w-8 rounded-full object-cover mr-2"
+                            className: "h-8 w-8 rounded-full object-cover mr-2",
+                            loading: "lazy",
+                            onContextMenu: (e)=>e.preventDefault(),
+                            onDragStart: (e)=>e.preventDefault(),
+                            style: {
+                                pointerEvents: 'none'
+                            }
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/layout/Footer.jsx",
                             lineNumber: 9,
-                            columnNumber: 11
+                            columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "font-medium",
                             children: "Biplab Karki"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/layout/Footer.jsx",
-                            lineNumber: 10,
+                            lineNumber: 18,
                             columnNumber: 11
                         }, this)
                     ]
@@ -1723,7 +1751,7 @@ function Footer() {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/layout/Footer.jsx",
-                    lineNumber: 12,
+                    lineNumber: 20,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1738,12 +1766,12 @@ function Footer() {
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/Footer.jsx",
-                                lineNumber: 17,
+                                lineNumber: 25,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/layout/Footer.jsx",
-                            lineNumber: 16,
+                            lineNumber: 24,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1755,12 +1783,12 @@ function Footer() {
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/Footer.jsx",
-                                lineNumber: 20,
+                                lineNumber: 28,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/layout/Footer.jsx",
-                            lineNumber: 19,
+                            lineNumber: 27,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1770,18 +1798,18 @@ function Footer() {
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/Footer.jsx",
-                                lineNumber: 23,
+                                lineNumber: 31,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/layout/Footer.jsx",
-                            lineNumber: 22,
+                            lineNumber: 30,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/layout/Footer.jsx",
-                    lineNumber: 15,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, this)
             ]
@@ -1902,6 +1930,7 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@vercel/analytics/dist/next/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$layout$2f$Navbar$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/layout/Navbar.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$sections$2f$Header$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/sections/Header.jsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$sections$2f$About$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/sections/About.jsx [app-client] (ecmascript)");
@@ -1915,6 +1944,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -1971,137 +2001,210 @@ function App() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$noop$2d$head$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
-                        children: "Biplab Karki | Portfolio"
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/page.js",
-                        lineNumber: 50,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        name: "description",
-                        content: "Portfolio of Biplab Karki - Software Developer, Machine Learning Enthusiast, and IoT Innovator"
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/page.js",
-                        lineNumber: 51,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        name: "keywords",
-                        content: "Biplab Karki, Software Developer, Machine Learning, IoT, Portfolio, Web Development"
+                        children: "Biplab Karki | Software Developer & Machine Learning Engineer"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
                         lineNumber: 52,
-                        columnNumber: 9
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        name: "author",
-                        content: "Biplab Karki"
+                        name: "title",
+                        content: "Biplab Karki | Software Developer & Machine Learning Engineer"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
                         lineNumber: 53,
-                        columnNumber: 9
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "description",
+                        content: "Innovative software developer specializing in web technologies, machine learning, and IoT solutions. Transforming ideas into cutting-edge digital experiences."
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 54,
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         property: "og:type",
                         content: "website"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 56,
-                        columnNumber: 9
+                        lineNumber: 57,
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         property: "og:url",
-                        content: "https://your-portfolio-url.com/"
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/page.js",
-                        lineNumber: 57,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        property: "og:title",
-                        content: "Biplab Karki | Portfolio"
+                        content: "https://biplabkarki.com.np/"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
                         lineNumber: 58,
-                        columnNumber: 9
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        property: "og:description",
-                        content: "Software Developer, Machine Learning Enthusiast, and IoT Innovator"
+                        property: "og:title",
+                        content: "Biplab Karki - Technology Innovator"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
                         lineNumber: 59,
-                        columnNumber: 9
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        property: "og:image",
-                        content: "/gitprof.png"
+                        property: "og:description",
+                        content: "Expert in software development, machine learning, and IoT. Creating innovative technological solutions."
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
                         lineNumber: 60,
-                        columnNumber: 9
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        property: "twitter:card",
+                        property: "og:image",
+                        content: "https://biplabkarki.com.np/og-image.png"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 61,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:card",
                         content: "summary_large_image"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 63,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        property: "twitter:url",
-                        content: "https://your-portfolio-url.com/"
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/page.js",
                         lineNumber: 64,
-                        columnNumber: 9
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        property: "twitter:title",
-                        content: "Biplab Karki | Portfolio"
+                        name: "twitter:url",
+                        content: "https://biplabkarki.com.np/"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
                         lineNumber: 65,
-                        columnNumber: 9
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        property: "twitter:description",
-                        content: "Software Developer, Machine Learning Enthusiast, and IoT Innovator"
+                        name: "twitter:title",
+                        content: "Biplab Karki | Tech Portfolio"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
                         lineNumber: 66,
-                        columnNumber: 9
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
-                        property: "twitter:image",
-                        content: "/gitprof.png"
+                        name: "twitter:description",
+                        content: "Software developer crafting innovative solutions in web, ML, and IoT technologies."
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
                         lineNumber: 67,
-                        columnNumber: 9
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "twitter:image",
+                        content: "https://biplabkarki.com.np/twitter-image.png"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 68,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "keywords",
+                        content: "Biplab Karki, Software Developer, Machine Learning, Web Development, IoT, Full Stack Developer, Technology Innovator, React Developer, Next.js"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 71,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "author",
+                        content: "Biplab Karki"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 72,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "canonical",
+                        href: "https://biplabkarki.com.np/"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 75,
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "viewport",
                         content: "width=device-width, initial-scale=1"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 70,
-                        columnNumber: 9
+                        lineNumber: 78,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        httpEquiv: "Content-Type",
+                        content: "text/html; charset=utf-8"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 79,
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "theme-color",
                         content: "#1E40AF"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.js",
-                        lineNumber: 71,
-                        columnNumber: 9
+                        lineNumber: 80,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "robots",
+                        content: "index, follow"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 83,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "geo.region",
+                        content: "NP"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 86,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "geo.placename",
+                        content: "Nepal"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 87,
+                        columnNumber: 3
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
+                        type: "application/ld+json",
+                        children: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Person",
+                            "name": "Biplab Karki",
+                            "jobTitle": "Software Developer",
+                            "knowsAbout": [
+                                "Web Development",
+                                "Machine Learning",
+                                "Internet of Things",
+                                "React",
+                                "Next.js"
+                            ],
+                            "url": "https://biplabkarki.com.np/",
+                            "sameAs": [
+                                "https://www.linkedin.com/in/biplabkarki13/",
+                                "https://github.com/karki-biplab"
+                            ]
+                        })
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/page.js",
+                        lineNumber: 90,
+                        columnNumber: 3
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 49,
-                columnNumber: 7
+                lineNumber: 50,
+                columnNumber: 1
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$context$2f$ThemeContext$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThemeProvider"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2112,50 +2215,50 @@ function App() {
                             showNavbar: showNavbar
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 76,
+                            lineNumber: 113,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$sections$2f$Header$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             scrollToSection: scrollToSection
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 77,
+                            lineNumber: 114,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$sections$2f$About$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 78,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$sections$2f$Skills$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 79,
+                            lineNumber: 116,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$sections$2f$Projects$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 80,
+                            lineNumber: 117,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$sections$2f$Contact$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 81,
+                            lineNumber: 118,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$layout$2f$Footer$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/src/app/page.js",
-                            lineNumber: 82,
+                            lineNumber: 119,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/page.js",
-                    lineNumber: 75,
+                    lineNumber: 112,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/page.js",
-                lineNumber: 74,
+                lineNumber: 111,
                 columnNumber: 7
             }, this)
         ]

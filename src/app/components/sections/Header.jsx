@@ -53,7 +53,15 @@ export default function Header({ scrollToSection }) {
       <div className="container mx-auto px-6 text-center z-10">
         <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="mb-6 flex justify-center">
-            <img src="/gitprof.png" alt="Biplab Karki" className="w-32 h-32 rounded-full border-4 border-white hover:scale-[1.05] duration-300 ease-in-out hover:shadow-2xl hover:shadow-blue-600" />
+          <img
+            src="/gitprof.png"
+            alt="Biplab Karki"
+            className="w-32 h-32 rounded-full border-4 border-white hover:scale-[1.05] duration-300 ease-in-out hover:shadow-2xl hover:shadow-blue-600"
+            loading="lazy"
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
+            style={{ pointerEvents: 'none' }}
+          />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">Biplab Karki</h1>
           <p className="text-xl md:text-2xl text-blue-200 mb-8 max-w-2xl mx-auto">
