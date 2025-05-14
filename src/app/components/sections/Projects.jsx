@@ -192,4 +192,6 @@ export default function Projects() {
       `}</style>
     </section>
   );
-}
+}//Whats up man what are you doing? I am here to help you with your code. If you have any specific questions or need assistance with something, feel free to ask!
+// I am here to help you with your code. If you have any specific questions or need assistance with something, feel free to ask!
+//Write a full code 
