@@ -69,8 +69,8 @@ export default function About() {
               skills through continuous learning.
             </p>
             <p>
-              I'm currently pursuing a BSc (Hons) in Computer Science at Herald College Kathmandu. My academic
-              foundation is complemented by several practical projects, ranging from mobile app development using
+              I've completed pursuing a BSc (Hons) in Computer Science at Herald College Kathmandu. My academic
+              foundation was complemented by several practical projects, ranging from mobile app development using
               Flutter & Firebase, to data science, machine learning, and IoT innovations.
             </p>
             <p>
