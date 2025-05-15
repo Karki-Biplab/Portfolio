@@ -1,0 +1,18 @@
+/* [project]/src/app/styles/blog.css [app-client] (css) */
+@apply bg-gray-900 text-gray-100 rounded-lg px-4 py-3 overflow-x-auto;
+
+@apply text-sm;
+
+@apply border-l-4 border-gray-300 pl-4 italic;
+
+@apply text-blue-600 no-underline hover:underline;
+
+@apply mt-12 mb-6;
+
+@apply mt-10 mb-4;
+
+@apply rounded-lg shadow-md mx-auto;
+
+@apply transition-all duration-200 hover:bg-gray-50 p-6 rounded-lg border border-transparent hover:border-gray-200;
+
+/*# sourceMappingURL=src_app_styles_blog_css_f9ee138c._.single.css.map*/

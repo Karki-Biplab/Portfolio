@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/styles/blog.css"],"sourcesContent":["/* Additional blog styling */\r\n\r\n/* Make code blocks look nicer */\r\n.prose pre {\r\n  @apply bg-gray-900 text-gray-100 rounded-lg px-4 py-3 overflow-x-auto;\r\n}\r\n\r\n.prose code {\r\n  @apply text-sm;\r\n}\r\n\r\n/* Style blockquotes */\r\n.prose blockquote {\r\n  @apply border-l-4 border-gray-300 pl-4 italic;\r\n}\r\n\r\n/* Style links with underline on hover */\r\n.prose a {\r\n  @apply text-blue-600 no-underline hover:underline;\r\n}\r\n\r\n/* Add spacing for headings */\r\n.prose h2 {\r\n  @apply mt-12 mb-6;\r\n}\r\n\r\n.prose h3 {\r\n  @apply mt-10 mb-4;\r\n}\r\n\r\n/* Style images */\r\n.prose img {\r\n  @apply rounded-lg shadow-md mx-auto;\r\n}\r\n\r\n/* Blog post list item styling */\r\n.blog-post-item {\r\n  @apply transition-all duration-200 hover:bg-gray-50 p-6 rounded-lg border border-transparent hover:border-gray-200;\r\n}"],"names":[],"mappings":"AAIE;;AAIA;;AAKA;;AAKA;;AAKA;;AAIA;;AAKA;;AAKA"}}]
+}

@@ -24,3 +24,32 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Dark mode adjustments for blog prose */
+@media (prefers-color-scheme: dark) {
+  .prose {
+    color: var(--foreground);
+  }
+  
+  .prose a {
+    color: #60a5fa; /* blue-400 in Tailwind */
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    color: var(--foreground);
+  }
+  
+  .prose strong {
+    color: var(--foreground);
+  }
+  
+  .prose code {
+    color: #fcd34d; /* amber-300 in Tailwind */
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .prose blockquote {
+    color: #d1d5db; /* gray-300 in Tailwind */
+    border-color: #4b5563; /* gray-600 in Tailwind */
+  }
+}
