@@ -56,6 +56,7 @@ export default function Projects() {
       tags: ["Arduino", "RFID", "IoT"],
       demoLink: "https://youtu.be/1vr0pS6GA6U",
     },
+    
     {
       title: "Next.js Client Projects",
       image: "/nextjs-projects.png",
@@ -87,16 +88,13 @@ export default function Projects() {
 
   const handleShowMore = () => {
     setVisibleCount((prev) => Math.min(prev + 3, projectsData.length));
-    setTimeout(() => {
-      projectsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 200);
   };
 
   const handleShowLess = () => {
     setVisibleCount(3);
     setTimeout(() => {
-      projectsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 200);
+      projectsRef.current?.scrollIntoView({ behavior: "smooth"});
+    }, 100  );
   };
 
   return (
@@ -192,6 +190,4 @@ export default function Projects() {
       `}</style>
     </section>
   );
-}//Whats up man what are you doing? I am here to help you with your code. If you have any specific questions or need assistance with something, feel free to ask!
-// I am here to help you with your code. If you have any specific questions or need assistance with something, feel free to ask!
-//Write a full code 
+}
