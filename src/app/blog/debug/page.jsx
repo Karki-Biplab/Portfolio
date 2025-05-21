@@ -48,14 +48,14 @@ export default function DebugBlogList() {
       
       <div className="space-y-6">
         {posts.map((post, index) => (
-          <div key={index} className="border p-4 rounded-lg shadow-sm">
+          <div key={index} className="border p-4 rounded-lg shadow">
             <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
             
             <div className="space-y-1 text-sm">
               <p><strong>Filename:</strong> {post.filename}</p>
               <p><strong>Generated Slug:</strong> {post.generatedSlug}</p>
               <p><strong>Frontmatter Slug:</strong> {post.frontmatterSlug || 'Not set'}</p>
-              <p><strong>Date:</strong> {post.date ? new Date(post.date).toLocaleDateString() : 'Not set'}</p>
+              <p><strong>Date:</strong> {post.date ? (typeof post.date === 'object' && post.date instanceof Date ? post.date.toLocaleDateString() : typeof post.date === 'string' ? post.date : String(post.date)) : 'Not set'}</p>
             </div>
             
             {post.error && (
@@ -67,7 +67,7 @@ export default function DebugBlogList() {
             <div className="mt-4 space-x-4">
               <Link 
                 href={`/blog/${post.generatedSlug}`}
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 underline hover:no-underline"
               >
                 View Post (using generated slug)
               </Link>
@@ -75,7 +75,7 @@ export default function DebugBlogList() {
               {post.frontmatterSlug && post.frontmatterSlug !== post.generatedSlug && (
                 <Link 
                   href={`/blog/${post.frontmatterSlug}`}
-                  className="text-purple-600 hover:underline"
+                  className="text-purple-600 underline hover:no-underline"
                 >
                   View Post (using frontmatter slug)
                 </Link>
