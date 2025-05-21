@@ -3,30 +3,51 @@ import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import Link from 'next/link';
-
+import { notFound } from 'next/navigation';
 // Function to get all blog post slugs for static generation
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), 'src/app/blog/_content');
+  
+  // Check if directory exists
+  if (!fs.existsSync(blogDir)) {
+    console.warn('Blog content directory not found:', blogDir);
+    return [];
+  }
+  
   const files = fs.readdirSync(blogDir);
   
-  return files
+  const params = files
     .filter(filename => filename.endsWith('.md'))
     .map(filename => {
-      const filePath = path.join(blogDir, filename);
+      const filePath = path.join(blogDir, filename);    
       const fileContents = fs.readFileSync(filePath, 'utf8');
-      const { data } = matter(fileContents);
       
-      return {
-        slug: data.slug || filename.replace('.md', ''),
-      };
+      try {
+        const { data } = matter(fileContents);
+        
+        // Use slug from frontmatter if available, otherwise use filename
+        const slug = data.slug || filename.replace('.md', '');
+        
+        console.log('Generated slug:', slug, 'from file:', filename); // Debug log
+        
+        return {
+          slug: slug,
+        };
+      } catch (error) {
+        console.error(`Error parsing ${filename}:`, error);
+        return {
+          slug: filename.replace('.md', ''),
+        };
+      }
     });
+    
+  console.log('All generated params:', params); // Debug log
+  return params;
 }
 
 // Function to generate metadata for each blog post
 export async function generateMetadata({ params }) {
-  // Await the params object
-  const resolvedParams = await params;
-  const { slug } = resolvedParams;
+  const { slug } = params;
   
   const post = getPostBySlug(slug);
   
@@ -53,9 +74,19 @@ export async function generateMetadata({ params }) {
 // Function to get blog post by slug
 function getPostBySlug(slug) {
   const blogDir = path.join(process.cwd(), 'src/app/blog/_content');
+  
+  // Check if directory exists
+  if (!fs.existsSync(blogDir)) {
+    console.error('Blog content directory not found:', blogDir);
+    return null;
+  }
+  
   const files = fs.readdirSync(blogDir);
   
-  // First try to find a file with matching slug in frontmatter
+  console.log('Looking for slug:', slug); // Debug log
+  console.log('Available files:', files); // Debug log
+  
+  // First try to find a file with matching slug in frontmatter or filename
   let postFile = null;
   
   for (const filename of files) {
@@ -67,8 +98,15 @@ function getPostBySlug(slug) {
     try {
       const { data } = matter(fileContents);
       
-      if (data.slug === slug || filename.replace('.md', '') === slug) {
+      // Check both frontmatter slug and filename-based slug
+      const frontmatterSlug = data.slug;
+      const filenameSlug = filename.replace('.md', '');
+      
+      console.log(`File: ${filename}, frontmatter slug: ${frontmatterSlug}, filename slug: ${filenameSlug}`); // Debug log
+      
+      if (frontmatterSlug === slug || filenameSlug === slug) {
         postFile = { path: filePath, contents: fileContents };
+        console.log('Found matching post:', filename); // Debug log
         break;
       }
     } catch (error) {
@@ -77,7 +115,10 @@ function getPostBySlug(slug) {
     }
   }
   
-  if (!postFile) return null;
+  if (!postFile) {
+    console.error('No matching post found for slug:', slug); // Debug log
+    return null;
+  }
   
   try {
     // Parse the post content
@@ -89,6 +130,8 @@ function getPostBySlug(slug) {
       title: data.title || 'Untitled Post',
       date: data.date || new Date().toISOString(),
       description: data.description || 'No description provided',
+      author: data.author || 'Unknown Author',
+      tags: data.tags || [],
       content: htmlContent,
     };
   } catch (error) {
@@ -109,26 +152,16 @@ function formatDate(date) {
   }
 }
 
-export default async function BlogPost({ params }) {
-  // Await the params object
-  const resolvedParams = await params;
-  const { slug } = resolvedParams;
+export default function BlogPost({ params }) {
+  const { slug } = params;
+  
+  console.log('BlogPost component - received slug:', slug); // Debug log
   
   const post = getPostBySlug(slug);
   
   if (!post) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
-        <p>The blog post you are looking for does not exist.</p>
-        <Link 
-          href="/blog"
-          className="text-blue-600 hover:text-blue-800 mt-4 inline-block"
-        >
-          ← Back to Blog
-        </Link>
-      </div>
-    );
+    console.log('Post not found, calling notFound()'); // Debug log
+    notFound(); // This will show the 404 page
   }
   
   return (
@@ -142,8 +175,22 @@ export default async function BlogPost({ params }) {
         </Link>
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <div className="text-gray-500 mb-6">
-          {formatDate(post.date)}
+          <span>By {post.author}</span>
+          <span className="mx-2">•</span>
+          <span>{formatDate(post.date)}</span>
         </div>
+        {post.tags && post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-6">
+            {post.tags.map((tag, index) => (
+              <span 
+                key={index}
+                className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
       
       <article className="prose prose-lg max-w-none">

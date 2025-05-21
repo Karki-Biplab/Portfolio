@@ -4,7 +4,7 @@ date: 2025-05-15
 author: "Biplab Karki"
 tags: ["domain", ".com.np", "Nepal", "guide", "tutorial"]
 description: "A complete step-by-step guide to register a free .com.np domain in Nepal for individuals and businesses."
-image: "/images/blog/com-np-guide-banner.jpg"
+image: "/images/blog/com-np-guide-banner.png"
 ---
 
 If you're starting a website in Nepal, there's good news - you can get a .com.np domain name absolutely free! Whether you're a freelancer, small business, or NGO, the .np domain is a powerful and professional way to represent yourself online. This guide walks you through every step of the registration process, from choosing a domain name to preparing documents and getting your domain live.

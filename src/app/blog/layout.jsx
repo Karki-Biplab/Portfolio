@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
-import './_styles/blog.css';
+import './components/blog.css';
 
 export default function BlogLayout({ children }) {
   return (

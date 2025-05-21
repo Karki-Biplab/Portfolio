@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import MobileMenu from './MobileMenu';
+import Link from 'next/link';
 
 export default function Navbar({ activeSection, showNavbar }) {
   const { theme, toggleTheme } = useTheme();
@@ -32,24 +33,35 @@ export default function Navbar({ activeSection, showNavbar }) {
         </button>
        
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6 items-center">
-          {['about', 'skills', 'projects', 'contact'].map(section => (
-            <button 
-              key={section}
-              onClick={() => scrollToSection(section)} 
-              className={`hover:text-blue-500 transition-colors capitalize ${activeSection === section ? 'text-blue-500 font-medium' : ''}`}
-            >
-              {section}
-            </button>
-          ))}
-          <button 
-            onClick={toggleTheme} 
-            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-          </button>
-        </div>
+       <div className="hidden md:flex space-x-6 items-center">
+  {['blog', 'about', 'skills', 'projects', 'contact'].map(section => (
+    section === 'blog' ? (
+      <Link 
+        key={section} 
+        href="/blog" 
+        className={`hover:text-blue-500 transition-colors capitalize ${activeSection === section ? 'text-blue-500 font-medium' : ''}`}
+      >
+        {section}
+      </Link>
+    ) : (
+      <button 
+        key={section}
+        onClick={() => scrollToSection(section)} 
+        className={`hover:text-blue-500 transition-colors capitalize ${activeSection === section ? 'text-blue-500 font-medium' : ''}`}
+      >
+        {section}
+      </button>
+    )
+  ))}
+  
+  <button 
+    onClick={toggleTheme} 
+    className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+    aria-label="Toggle theme"
+  >
+    {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+  </button>
+</div>
         
         {/* Mobile menu button */}
         <button 

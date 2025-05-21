@@ -1,0 +1,80 @@
+/* Blog main styles */
+.blog-post-item {
+  @apply transition-all duration-200 hover:bg-gray-50 hover:shadow-md;
+}
+
+/* Make code blocks look nicer */
+.prose pre {
+  @apply bg-gray-900 text-gray-100 rounded-lg px-4 py-3 overflow-x-auto;
+}
+
+.prose code {
+  @apply text-sm;
+}
+
+/* Style blockquotes */
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic;
+}
+
+/* Style links with underline on hover */
+.prose a {
+  @apply text-blue-600 no-underline hover:underline;
+}
+
+/* Add spacing for headings */
+.prose h2 {
+  @apply mt-12 mb-6;
+}
+
+.prose h3 {
+  @apply mt-10 mb-4;
+}
+
+/* Style images */
+.prose img {
+  @apply rounded-lg shadow-md mx-auto;
+}
+
+/* Blog filters */
+.blog-filter-button {
+  @apply px-4 py-2 rounded-full text-sm transition;
+}
+
+.blog-filter-button.active {
+  @apply bg-blue-600 text-white;
+}
+
+.blog-filter-button:not(.active) {
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-700;
+}
+
+/* Typography utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card styling */
+.blog-card-image {
+  @apply relative h-48 w-full overflow-hidden;
+}
+
+.blog-card-image img {
+  @apply w-full h-full object-cover transition-transform duration-300;
+}
+
+.blog-post-item:hover .blog-card-image img {
+  @apply transform scale-105;
+}
+
+/* Author avatar */
+.author-avatar {
+  @apply w-8 h-8 rounded-full overflow-hidden bg-gray-200 mr-3;
+}
+
+.author-avatar img {
+  @apply w-full h-full object-cover;
+}
