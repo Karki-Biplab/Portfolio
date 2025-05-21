@@ -1,4 +1,7 @@
 {
   "/_not-found/page": "/_not-found",
-  "/page": "/"
+  "/page": "/",
+  "/blog/debug/page": "/blog/debug",
+  "/blog/page": "/blog",
+  "/blog/[slug]/page": "/blog/[slug]"
 }

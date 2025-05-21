@@ -71,12 +71,12 @@
 
 @layer theme {
   :root, :host {
+    --color-red-50: oklch(97.1% .013 17.38);
     --color-red-100: oklch(93.6% .032 17.717);
-    --color-red-500: oklch(63.7% .237 25.331);
     --color-red-600: oklch(57.7% .245 27.325);
+    --color-yellow-50: oklch(98.7% .026 102.212);
     --color-green-100: oklch(96.2% .044 156.743);
     --color-green-600: oklch(62.7% .194 149.214);
-    --color-green-800: oklch(44.8% .119 151.328);
     --color-blue-50: oklch(97% .014 254.604);
     --color-blue-100: oklch(93.2% .032 255.585);
     --color-blue-200: oklch(88.2% .059 254.128);
@@ -457,10 +457,6 @@
     margin-inline: auto;
   }
 
-  .my-16 {
-    margin-block: calc(var(--spacing) * 16);
-  }
-
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
@@ -765,10 +761,6 @@
     resize: both;
   }
 
-  .list-inside {
-    list-style-position: inside;
-  }
-
   .list-disc {
     list-style-type: disc;
   }
@@ -1019,6 +1011,10 @@
     background-color: var(--color-green-600);
   }
 
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
+
   .bg-red-600 {
     background-color: var(--color-red-600);
   }
@@ -1029,6 +1025,10 @@
 
   .bg-white {
     background-color: var(--color-white);
+  }
+
+  .bg-yellow-50 {
+    background-color: var(--color-yellow-50);
   }
 
   .bg-gradient-to-b {
@@ -1196,6 +1196,10 @@
     padding-left: calc(var(--spacing) * 4);
   }
 
+  .pl-5 {
+    padding-left: calc(var(--spacing) * 5);
+  }
+
   .pl-10 {
     padding-left: calc(var(--spacing) * 10);
   }
@@ -1316,16 +1320,16 @@
     color: var(--color-green-100);
   }
 
-  .text-green-600 {
-    color: var(--color-green-600);
+  .text-purple-600 {
+    color: var(--color-purple-600);
   }
 
   .text-red-100 {
     color: var(--color-red-100);
   }
 
-  .text-red-500 {
-    color: var(--color-red-500);
+  .text-red-600 {
+    color: var(--color-red-600);
   }
 
   .text-white {
@@ -1559,12 +1563,6 @@
   @media (hover: hover) {
     .hover\:text-blue-800:hover {
       color: var(--color-blue-800);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:text-green-800:hover {
-      color: var(--color-green-800);
     }
   }
 
