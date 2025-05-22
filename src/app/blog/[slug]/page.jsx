@@ -4,6 +4,8 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import './blog-post.css'; // Import the CSS file
+
 // Function to get all blog post slugs for static generation
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), 'src/app/blog/_content');
@@ -165,37 +167,77 @@ export default function BlogPost({ params }) {
   }
   
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <div className="mb-8">
-        <Link 
-          href="/blog"
-          className="text-blue-600 hover:text-blue-800 mb-6 inline-block"
-        >
-          ← Back to Blog
-        </Link>
-        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-        <div className="text-gray-500 mb-6">
-          <span>By {post.author}</span>
-          <span className="mx-2">•</span>
-          <span>{formatDate(post.date)}</span>
-        </div>
-        {post.tags && post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-6">
-            {post.tags.map((tag, index) => (
-              <span 
-                key={index}
-                className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+    <>
+      {/* Reading progress indicator */}
+      <div className="reading-progress">
+      <div className="reading-progress-bar" id="reading-progress-bar"></div>
       </div>
       
-      <article className="prose prose-lg max-w-none">
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
-      </article>
-    </div>
+      <div className="blog-post-container">
+        <header className="blog-post-header">
+          <Link 
+            href="/blog"
+            className="back-link"
+          >
+            ← Back to Blog
+          </Link>
+          
+          <h1 className="blog-title">{post.title}</h1>
+          
+          <div className="blog-meta">
+            <span>By {post.author}</span>
+            <span>•</span>
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+          </div>
+          
+          {post.tags && post.tags.length > 0 && (
+            <div className="blog-tags">
+              {post.tags.map((tag, index) => (
+                <span key={index} className="blog-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </header>
+        
+        <article className="blog-content">
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        </article>
+      </div>
+      
+      {/* Reading progress script */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.getElementById('reading-progress-bar');
+            const article = document.querySelector('.blog-content');
+            
+            if (progressBar && article) {
+              function updateProgress() {
+                const articleTop = article.offsetTop;
+                const articleHeight = article.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                const articleBottom = articleTop + articleHeight;
+                const windowBottom = scrollTop + windowHeight;
+                
+                let progress = 0;
+                if (scrollTop > articleTop) {
+                  progress = Math.min(100, ((windowBottom - articleTop) / articleHeight) * 100);
+                }
+                
+                progressBar.style.width = progress + '%';
+              }
+              
+              window.addEventListener('scroll', updateProgress);
+              window.addEventListener('resize', updateProgress);
+              updateProgress();
+            }
+          });
+        `
+      }} />
+    </>
   );
 }
