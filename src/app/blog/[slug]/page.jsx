@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ReadingProgress from './ReadingProgress'; // We'll create this component
 import './blog-post.css'; // Import the CSS file
 
 // Function to get all blog post slugs for static generation
@@ -168,10 +169,8 @@ export default function BlogPost({ params }) {
   
   return (
     <>
-      {/* Reading progress indicator */}
-      <div className="reading-progress">
-      <div className="reading-progress-bar" id="reading-progress-bar"></div>
-      </div>
+      {/* Reading progress indicator - now a client component */}
+      <ReadingProgress />
       
       <div className="blog-post-container">
         <header className="blog-post-header">
@@ -205,39 +204,6 @@ export default function BlogPost({ params }) {
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
       </div>
-      
-      {/* Reading progress script */}
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          document.addEventListener('DOMContentLoaded', function() {
-            const progressBar = document.getElementById('reading-progress-bar');
-            const article = document.querySelector('.blog-content');
-            
-            if (progressBar && article) {
-              function updateProgress() {
-                const articleTop = article.offsetTop;
-                const articleHeight = article.offsetHeight;
-                const windowHeight = window.innerHeight;
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                const articleBottom = articleTop + articleHeight;
-                const windowBottom = scrollTop + windowHeight;
-                
-                let progress = 0;
-                if (scrollTop > articleTop) {
-                  progress = Math.min(100, ((windowBottom - articleTop) / articleHeight) * 100);
-                }
-                
-                progressBar.style.width = progress + '%';
-              }
-              
-              window.addEventListener('scroll', updateProgress);
-              window.addEventListener('resize', updateProgress);
-              updateProgress();
-            }
-          });
-        `
-      }} />
     </>
   );
 }

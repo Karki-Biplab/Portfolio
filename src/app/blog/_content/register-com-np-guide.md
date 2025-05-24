@@ -5,13 +5,145 @@ author: "Biplab Karki"
 tags: ["domain", ".com.np", "Nepal", "guide", "tutorial"]
 description: "A complete step-by-step guide to register a free .com.np domain in Nepal for individuals and businesses."
 image: "/images/blog/com-np-guide-banner.png"
+
+# EXPLOSIVE SEO Meta Tags 🚀
+meta:
+  # Primary SEO Tags - Targeting Nepal market HARD
+  title: "Free .com.np Domain Registration 2025: Complete Nepal Guide + Templates"
+  description: "Get your FREE .com.np domain in Nepal! Complete step-by-step guide with document templates, approval tips, and hosting setup. 100% free registration for Nepali citizens."
+  keywords: "free .com.np domain Nepal, register .com.np domain 2025, Nepal domain registration guide, Mercantile domain registration, free domain Nepal, .np domain registration process, Nepal website domain, citizenship domain registration"
+  
+  # Open Graph (Facebook, LinkedIn, WhatsApp)
+  og:
+    title: "FREE .com.np Domain for Nepal Citizens | Complete Registration Guide 2025"
+    description: "🇳🇵 Get your FREE .com.np domain in Nepal! Step-by-step guide with templates, documents needed, and approval secrets. Perfect for businesses & individuals."
+    image: "/images/blog/com-np-guide-banner.png"
+    url: "https://www.biplabkarki.com.np/blog/register-com-np-guide"
+    type: "article"
+    site_name: "Biplab's Tech Hub"
+    locale: "en_US"
+    
+  # Twitter Cards
+  twitter:
+    card: "summary_large_image"
+    title: "🇳🇵 FREE .com.np Domain Registration Guide for Nepal Citizens"
+    description: "💰 Get your .com.np domain for FREE! Complete guide with templates, tips & approval secrets. Perfect for Nepal businesses & freelancers 🚀"
+    image: "/images/blog/com-np-guide-banner.png"
+    creator: "@KNomem13"
+    site: "@KNomem13"
+  
+  # Article-specific tags
+  article:
+    published_time: "2025-05-15T00:00:00Z"
+    modified_time: "2025-05-15T00:00:00Z"
+    author: "Biplab Karki"
+    section: "Domain Registration"
+    tag: ["Free Domain Nepal", ".com.np Registration", "Nepal Domain Guide", "Mercantile Domain", "Nepal Website", "Free .np Domain", "Domain Registration Nepal"]
+  
+  # Technical SEO
+  canonical_url: "https://www.biplabkarki.com.np/blog/register-com-np-guide"
+  robots: "index, follow, max-image-preview:large, max-snippet:-1"
+  
+  # Geographic targeting - NEPAL FOCUSED 🇳🇵
+  geo:
+    region: "NP"
+    placename: "Nepal"
+    position: "28.3949;84.1240"
+  
+  # Language targeting
+  hreflang:
+    - lang: "en"
+      url: "https://www.biplabkarki.com.np/blog/register-com-np-guide"
+    - lang: "ne"
+      url: "https://www.biplabkarki.com.np/blog/register-com-np-guide"
+  
+  # Schema.org structured data
+  schema:
+    type: "HowTo"
+    name: "How to Register a Free .com.np Domain in Nepal"
+    description: "Complete step-by-step guide to register a free .com.np domain name in Nepal with required documents and templates"
+    image: "/images/blog/com-np-guide-banner.png"
+    totalTime: "PT13M"
+    estimatedCost:
+      currency: "NPR"
+      value: "0"
+    supply:
+      - "Nepali Citizenship Certificate"
+      - "Cover Letter Template"
+      - "Email Account"
+    tool:
+      - name: "register.com.np"
+        url: "https://register.com.np"
+    step:
+      - name: "Choose Domain Name"
+        text: "Select a domain name matching your personal or business name"
+        image: "/images/blog/step1-choose-domain.png"
+      - name: "Create Account"
+        text: "Register at register.com.np with email verification"
+        url: "https://register.com.np"
+      - name: "Prepare Documents"
+        text: "Scan citizenship certificate and prepare cover letter"
+      - name: "Submit Application"
+        text: "Upload documents and submit domain registration request"
+      - name: "Wait for Approval"
+        text: "Mercantile reviews application within 24-72 hours"
+      - name: "Setup Hosting"
+        text: "Connect approved domain to your web hosting service"
+    author:
+      type: "Person"
+      name: "Biplab Karki"
+      url: "https://biplabkarki.com.np"
+    publisher:
+      type: "Organization"
+      name: "Biplab's Tech Hub"
+      logo: "/images/logo.png"
+      url: "https://www.biplabkarki.com.np"
+    datePublished: "2025-05-15"
+    dateModified: "2025-05-15"
+    
+  # FAQ Schema for rich snippets 🎯
+  faq:
+    - question: "Is .com.np domain really free in Nepal?"
+      answer: "Yes! .com.np domains are completely free for Nepali citizens and registered businesses. You only need to provide citizenship documents and a cover letter to Mercantile Communications."
+    - question: "How long does .com.np domain approval take?"
+      answer: "Mercantile Communications typically approves .com.np domain applications within 24-72 hours, excluding weekends and holidays. All applications are manually reviewed."
+    - question: "What documents are needed for .com.np domain registration?"
+      answer: "For individuals: Nepali citizenship certificate (both sides) and a cover letter. For businesses: company registration certificate and cover letter on company letterhead."
+    - question: "Can foreigners register .com.np domains?"
+      answer: "No, .com.np domains are only available to Nepali citizens with valid citizenship certificates or businesses legally registered in Nepal."
+    - question: "What happens if my .com.np domain gets rejected?"
+      answer: "Common rejection reasons include domain name not matching your official name, unclear documents, or missing cover letter. Ensure your domain matches your citizenship name exactly."
+    - question: "Can I use .com.np domain for business?"
+      answer: "Yes! .com.np domains are perfect for Nepal businesses, freelancers, and personal brands. They provide local credibility and are SEO-friendly for Nepal searches."
+
+  # Local Business Schema (for Nepal focus)
+  local_business:
+    type: "WebsiteService"
+    name: "Free .com.np Domain Registration Guide"
+    description: "Complete guide for registering free .com.np domains in Nepal"
+    areaServed:
+      type: "Country"
+      name: "Nepal"
+    availableLanguage: ["English", "Nepali"]
+    
+  # Breadcrumb Schema
+  breadcrumb:
+    - name: "Home"
+      url: "https://biplabkarki.com.np"
+    - name: "Blog"
+      url: "https://biplabkarki.com.np/blog"
+    - name: "Domain Guides"
+      url: "https://biplabkarki.com.np/blog/category/domains"
+    - name: "Free .com.np Domain Registration Guide"
+      url: "https://www.biplabkarki.com.np/blog/register-com-np-guide"
+
 ---
 
 If you're starting a website in Nepal, there's good news - you can get a .com.np domain name absolutely free! Whether you're a freelancer, small business, or NGO, the .np domain is a powerful and professional way to represent yourself online. This guide walks you through every step of the registration process, from choosing a domain name to preparing documents and getting your domain live.
 
 ## 💡 What is a .com.np Domain?
 
-The .np domain is Nepal's country code top-level domain (ccTLD), managed by Mercantile Communications Pvt. Ltd. It’s available for free to Nepali citizens and legally registered organizations.
+The .np domain is Nepal's country code top-level domain (ccTLD), managed by Mercantile Communications Pvt. Ltd. It's available for free to Nepali citizens and legally registered organizations.
 
 Some examples:
 
@@ -55,7 +187,7 @@ Make sure your domain name:
 
 - Log in to your account.
 - Use the Domain Search bar to check if your desired domain is available.
-- If available, click “Register Now” to proceed with the application.
+- If available, click "Register Now" to proceed with the application.
 
 ### Step 4: Prepare Required Documents
 
@@ -126,7 +258,7 @@ Submit the request.
 
 - Your request goes under manual review by Mercantile.
 - It typically takes 24 to 72 hours (excluding weekends/holidays).
-- You’ll receive an email confirmation once approved.
+- You'll receive an email confirmation once approved.
 
 ### Step 7: Connect Your Hosting
 
