@@ -8,6 +8,7 @@ description: "NVMe hosting is changing the game with ultra-fast speed, low laten
 keywords: ["NVMe hosting", "fastest web hosting", "PCIe NVMe storage", "SSD vs NVMe", "best web hosting for SEO", "zero downtime hosting", "hosting Nepal"]
 image: "/images/blog/nvme-hosting-banner.png"
 summary: "Discover how NVMe hosting blows SATA SSDs out of the water. This 2025 guide explains what NVMe is, how it improves website performance, and how to upgrade today."
+category: "Technology"
 
 # Advanced SEO Meta Tags
 meta:

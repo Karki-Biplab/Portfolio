@@ -7,45 +7,75 @@ export default function ReadingProgress() {
 
   useEffect(() => {
     const updateProgress = () => {
-      const article = document.querySelector('.blog-content');
+      // Look for the article content using multiple selectors
+      const article = 
+  document.querySelector('.blog-content') || 
+  document.querySelector('article') || 
+  document.querySelector('.prose');
       
-      if (!article) return;
+      if (!article) {
+        console.log('Article element not found for reading progress');
+        return;
+      }
       
       const articleTop = article.offsetTop;
       const articleHeight = article.offsetHeight;
       const windowHeight = window.innerHeight;
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       
-      const articleBottom = articleTop + articleHeight;
-      const windowBottom = scrollTop + windowHeight;
-      
+      // Calculate progress based on how much of the article has been scrolled past
       let newProgress = 0;
-      if (scrollTop > articleTop) {
-        newProgress = Math.min(100, ((windowBottom - articleTop) / articleHeight) * 100);
+      
+      if (scrollTop >= articleTop) {
+        const scrolledPastArticleTop = scrollTop - articleTop;
+        const articleScrollableHeight = Math.max(articleHeight - windowHeight, 1);
+        newProgress = Math.min(100, (scrolledPastArticleTop / articleScrollableHeight) * 100);
       }
       
-      setProgress(newProgress);
+      // Smooth the progress a bit
+      setProgress(Math.max(0, newProgress));
     };
 
     // Set initial progress
-    updateProgress();
+    const initialUpdate = () => {
+      setTimeout(updateProgress, 100); // Give DOM time to render
+    };
     
-    // Add event listeners
-    window.addEventListener('scroll', updateProgress);
-    window.addEventListener('resize', updateProgress);
+    initialUpdate();
+    
+    // Add event listeners with passive flag for better performance
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    
+    // Update progress when DOM changes (useful for dynamic content)
+    const observer = new MutationObserver(() => {
+      setTimeout(updateProgress, 100);
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: false
+    });
     
     // Cleanup
     return () => {
       window.removeEventListener('scroll', updateProgress);
       window.removeEventListener('resize', updateProgress);
+      observer.disconnect();
     };
   }, []);
 
   return (
-    <div className="reading-progress">
+    <div 
+      className="fixed top-0 left-0 w-full h-1 bg-gray-700 z-50"
+      style={{ height: '3px' }}
+    >
       <div 
-        className="reading-progress-bar" 
-        style={{ width: `${progress}%` }}
+        className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-150 ease-out"
+        style={{ 
+          width: `${progress}%`,
+        }}
       />
     </div>
   );

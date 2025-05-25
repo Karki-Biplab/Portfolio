@@ -6,6 +6,7 @@ tags: ["remote access", "server", "home server", "tailscale", "chrome remote des
 description: "Learn how to transform an old laptop into a secure remote personal server using Tailscale, and see how it compares to Chrome Remote Desktop for remote access without port forwarding."
 slug: "old-laptop-remote-personal-server-tailscale-vs-crd"
 image: "/images/blog/remote-server-laptop.png"
+category: "Technology"
 
 # SEO Meta Tags
 meta:
