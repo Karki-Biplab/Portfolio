@@ -78,7 +78,7 @@ Nepal's iodine deficiency elimination program was nothing short of spectacular. 
 
 **But we overshot the target.**
 
-Recent studies reveal a troubling reality: **68-84% of Nepali households** now consume dangerously high levels of iodine. Our salt contains an average of **53.9 parts per million (ppm) of iodine**—significantly above the World Health Organization's recommended range of 15-40 ppm.
+Recent studies reveal a troubling reality: **68-84% of Nepali households** now consume dangerously high levels of iodine. Our salt contains an average of **53.9 parts per million (ppm) of iodine** significantly above the World Health Organization's recommended range of 15-40 ppm.
 
 The pendulum has swung too far in the opposite direction, and we're witnessing the consequences:
 
@@ -106,7 +106,7 @@ Enter the latest health trend sweeping across Nepal: **Himalayan crystal salt** 
 - No proven detoxification benefits
 - **Same health risks** as regular salt when overconsumed
 
-Using crystal salt as your primary salt source essentially means **bringing back goiter and cretinism**—the very diseases Nepal fought so hard to eliminate.
+Using crystal salt as your primary salt source essentially means **bringing back goiter and cretinism**: the very diseases Nepal fought so hard to eliminate.
 
 ## The Hidden Iodine Everywhere
 
@@ -150,7 +150,7 @@ The result? Many Nepalis consume **2-3 times** the recommended daily iodine inta
 
 ## Smart Salt Strategy for Nepali Families
 
-### ✅ Use Iodized Salt—But Smartly
+### ✅ Use Iodized Salt, But Smartly
 
 **Choose the right salt:**
 - Purchase packet salt with clear iodine labeling
@@ -164,7 +164,7 @@ The result? Many Nepalis consume **2-3 times** the recommended daily iodine inta
 
 **Correct quantity:**
 - **Maximum 1 teaspoon (5g) per person daily** includes all sources
-- Measure don't estimate—our taste buds adapt to excess
+- Measure don't estimate: Our taste buds adapt to excess
 - Account for salt in processed foods
 
 ### 🚫 Don't Wash Your Salt
@@ -305,10 +305,10 @@ The upcoming **Iodised Salt Act (July 2025)** presents Nepal with a crucial oppo
 ### For Individuals and Families
 
 **Immediate steps:**
-1. **Audit your salt sources**—account for all sodium in your diet
+1. **Audit your salt sources**: Account for all sodium in your diet
 2. **Choose quality iodized salt** and store it properly  
 3. **Limit processed foods**, especially for children
-4. **Don't fall for crystal salt marketing**—use occasionally if desired
+4. **Don't fall for crystal salt marketing**, use occasionally if desired
 5. **Enhance flavors naturally** with spices and herbs
 6. **Monitor family health** for thyroid disorder symptoms
 

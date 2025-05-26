@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
 
 function formatDate(date) {
   try {
@@ -95,6 +97,59 @@ export default function BlogPage({ allPosts }) {
     setModalCategory(null);
   };
 
+  const blogDescription = "Whether it's servers, salt, or smog - if I'm curious, I'm writing. This blog isn't limited to just code and tech. It's a space where I explore whatever grabs my attention. From late-night thoughts to deep dives into hosting setups or the science behind real life, it's all here. Welcome to a place where tech meets thought, and everyday questions turn into stories worth sharing.";
+
+  const letterVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      rotateX: -90,
+      scale: 0.8
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      rotateX: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 200
+      }
+    }
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const glowVariants = {
+    initial: {
+      boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)"
+    },
+    animate: {
+      boxShadow: [
+        "0 0 20px rgba(59, 130, 246, 0.3)",
+        "0 0 40px rgba(147, 51, 234, 0.4)",
+        "0 0 60px rgba(236, 72, 153, 0.5)",
+        "0 0 40px rgba(147, 51, 234, 0.4)",
+        "0 0 20px rgba(59, 130, 246, 0.3)"
+      ],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -111,14 +166,91 @@ export default function BlogPage({ allPosts }) {
         </div>
         
         {/* Blog Header */}
-        <div className="text-center mb-20">
-          <h1 className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            My Blog
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Discover stories, insights, and expertise on technology, design, and development. 
-            Join me on this journey of continuous learning and innovation.
-          </p>
+        <div className="text-center mb-20 relative">
+          {/* Floating background elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[...Array(20)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20"
+                animate={{
+                  y: [-20, -100, -20],
+                  x: [0, Math.random() * 100 - 50, 0],
+                  scale: [0.5, 1, 0.5],
+                  opacity: [0.2, 0.8, 0.2]
+                }}
+                transition={{
+                  duration: Math.random() * 3 + 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 2
+                }}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Title with letter-by-letter animation */}
+          <motion.div
+            variants={glowVariants}
+            initial="initial"
+            animate="animate"
+            className="relative mb-16"
+          >
+            <motion.h1 
+              className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent relative z-10"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {"My Blogs".split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  variants={letterVariants}
+                  className="inline-block"
+                  whileHover={{ 
+                    scale: 1.2, 
+                    rotateY: 180,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))}
+            </motion.h1>
+            
+            {/* Glowing underline */}
+            <motion.div
+              className="h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mx-auto rounded-full"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: "200px", opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1.5, ease: "easeOut" }}
+            />
+          </motion.div>
+
+          {/* Description with simple, elegant animation */}
+          <motion.div
+            className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mt-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2, duration: 1, ease: "easeOut" }}
+          >
+            <motion.p
+              className="p-6 rounded-xl backdrop-blur-sm text-center"
+              whileHover={{ 
+                scale: 1.01,
+                backgroundColor: "rgba(255, 255, 255, 0.05)",
+                transition: { duration: 0.3 }
+              }}
+              style={{
+                background: `linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%)`
+              }}
+            >
+              {blogDescription}
+            </motion.p>
+          </motion.div>
         </div>
 
         {/* Featured Post */}
