@@ -1,33 +1,29 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function TableOfContents({ headings, mobile = false }) {
   const [activeId, setActiveId] = useState('');
   const [isExpanded, setIsExpanded] = useState(!mobile);
+  const tocRef = useRef(null);
 
   useEffect(() => {
     if (!headings || headings.length === 0) return;
 
-    // Add IDs to headings in the DOM
     const addIdsToHeadings = () => {
       headings.forEach(heading => {
-        // Look for heading elements with matching text content
         const elements = document.querySelectorAll(`h${heading.level}`);
         elements.forEach(element => {
           if (element.textContent?.trim() === heading.text.trim() && !element.id) {
             element.id = heading.id;
-            // Add smooth scroll offset for fixed header
             element.style.scrollMarginTop = '120px';
           }
         });
       });
     };
 
-    // Wait for DOM to be ready, then add IDs
     const timer = setTimeout(addIdsToHeadings, 100);
 
-    // Intersection Observer for active section tracking
     const observerOptions = {
       root: null,
       rootMargin: '-100px 0px -66% 0px',
@@ -35,7 +31,6 @@ export default function TableOfContents({ headings, mobile = false }) {
     };
 
     const observer = new IntersectionObserver((entries) => {
-      // Find the entry with the highest intersection ratio that's intersecting
       let mostVisible = null;
       let highestRatio = 0;
 
@@ -47,20 +42,40 @@ export default function TableOfContents({ headings, mobile = false }) {
       });
 
       if (mostVisible) {
-        setActiveId(mostVisible.target.id);
+        const newActiveId = mostVisible.target.id;
+        setActiveId(newActiveId);
+
+        // Scroll the TOC to show the active item
+        const tocElement = tocRef.current?.querySelector(`[data-id="${newActiveId}"]`);
+        if (tocElement && tocRef.current) {
+          const containerTop = tocRef.current.scrollTop;
+          const containerHeight = tocRef.current.clientHeight;
+          const elementTop = tocElement.offsetTop;
+          const elementHeight = tocElement.clientHeight;
+
+          // Scroll only if out of view
+          if (
+            elementTop < containerTop ||
+            elementTop + elementHeight > containerTop + containerHeight
+          ) {
+            tocRef.current.scrollTo({
+              top: elementTop - containerHeight / 2 + elementHeight / 2,
+              behavior: 'smooth'
+            });
+          }
+        }
       } else {
-        // Fallback: check which heading is closest to the top of the viewport
         const headingElements = headings
           .map(h => document.getElementById(h.id))
           .filter(Boolean);
-        
+
         let closestElement = null;
         let smallestDistance = Infinity;
 
         headingElements.forEach(element => {
           const rect = element.getBoundingClientRect();
-          const distance = Math.abs(rect.top - 100); // 100px offset for header
-          
+          const distance = Math.abs(rect.top - 100);
+
           if (distance < smallestDistance && rect.top <= 200) {
             smallestDistance = distance;
             closestElement = element;
@@ -73,7 +88,6 @@ export default function TableOfContents({ headings, mobile = false }) {
       }
     }, observerOptions);
 
-    // Observe all headings
     const observeHeadings = () => {
       headings.forEach(heading => {
         const element = document.getElementById(heading.id);
@@ -83,10 +97,8 @@ export default function TableOfContents({ headings, mobile = false }) {
       });
     };
 
-    // Start observing after a short delay to ensure DOM is ready
     const observeTimer = setTimeout(observeHeadings, 200);
 
-    // Handle scroll events as backup
     const handleScroll = () => {
       if (window.scrollY < 100) {
         setActiveId('');
@@ -100,8 +112,8 @@ export default function TableOfContents({ headings, mobile = false }) {
       for (let i = headingElements.length - 1; i >= 0; i--) {
         const element = headingElements[i];
         const rect = element.getBoundingClientRect();
-        
-        if (rect.top <= 120) { // Account for fixed header
+
+        if (rect.top <= 120) {
           setActiveId(element.id);
           break;
         }
@@ -121,18 +133,36 @@ export default function TableOfContents({ headings, mobile = false }) {
   const scrollToHeading = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -100; // Account for fixed header
+      const yOffset = -100;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      
-      window.scrollTo({ 
-        top: y, 
-        behavior: 'smooth' 
+
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
       });
-      
-      // Update active state immediately for better UX
+
       setActiveId(id);
+
+      // Scroll TOC to show the active item
+      const tocElement = tocRef.current?.querySelector(`[data-id="${id}"]`);
+      if (tocElement && tocRef.current) {
+        const containerTop = tocRef.current.scrollTop;
+        const containerHeight = tocRef.current.clientHeight;
+        const elementTop = tocElement.offsetTop;
+        const elementHeight = tocElement.clientHeight;
+
+        if (
+          elementTop < containerTop ||
+          elementTop + elementHeight > containerTop + containerHeight
+        ) {
+          tocRef.current.scrollTo({
+            top: elementTop - containerHeight / 2 + elementHeight / 2,
+            behavior: 'smooth'
+          });
+        }
+      }
     }
-    
+
     if (mobile) {
       setIsExpanded(false);
     }
@@ -143,14 +173,15 @@ export default function TableOfContents({ headings, mobile = false }) {
   }
 
   const tocContent = (
-    <div className="space-y-1">
+    <div className="space-y-1" ref={tocRef}>
       {headings.map((heading, index) => {
         const isActive = activeId === heading.id;
-        const levelIndent = Math.max(0, heading.level - 1) * 12; // 12px per level
-        
+        const levelIndent = Math.max(0, heading.level - 1) * 12;
+
         return (
           <button
             key={index}
+            data-id={heading.id}
             onClick={() => scrollToHeading(heading.id)}
             className={`
               block w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 
@@ -177,8 +208,7 @@ export default function TableOfContents({ headings, mobile = false }) {
                 {heading.text}
               </span>
             </span>
-            
-            {/* Active indicator */}
+
             {isActive && (
               <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-6 bg-blue-400 rounded-r-full"></div>
             )}
@@ -222,7 +252,7 @@ export default function TableOfContents({ headings, mobile = false }) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        
+
         <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96' : 'max-h-0'}`}>
           <div className="px-4 pb-4 border-t border-gray-700/50">
             <div className="pt-4">
@@ -234,7 +264,6 @@ export default function TableOfContents({ headings, mobile = false }) {
     );
   }
 
-  // Desktop version
   return (
     <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 shadow-xl sticky top-8">
       <div className="flex items-center gap-3 mb-6">
@@ -250,19 +279,21 @@ export default function TableOfContents({ headings, mobile = false }) {
           </p>
         </div>
       </div>
-      
-      <nav className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
+
+      <nav
+        ref={tocRef}
+        className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600"
+      >
         {tocContent}
       </nav>
-      
+
       <div className="mt-6 pt-4 border-t border-gray-700/50">
         <div className="flex items-center text-xs text-gray-500">
           <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></div>
           <span>
             {activeId 
-              ? `Reading: ${headings.find(h => h.id === activeId)?.text || 'Current section'}`
-              : 'Start reading'
-            }
+              ? `Reading: ${headings.find(h => h.id === activeId)?.text || 'Current section'}` 
+              : 'Start reading'}
           </span>
         </div>
       </div>

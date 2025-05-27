@@ -6,9 +6,8 @@ import './components/blog.css';
 export default function BlogLayout({ children }) {
   return (
     <div className="dev-hub-layout bg-slate-900 min-h-screen text-gray-100">
-     {/* // <Navbar showNavbar={true} activeSection="" /> */}
 
-      <main className="pt-[80px]"> {/* Add padding if Navbar is fixed */}
+      <main >
         {children}
       </main>
 

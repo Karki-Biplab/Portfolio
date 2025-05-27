@@ -124,21 +124,19 @@ function TableOfContents({ headings, mobile = false }) {
     _s();
     const [activeId, setActiveId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [isExpanded, setIsExpanded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(!mobile);
+    const tocRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "TableOfContents.useEffect": ()=>{
             if (!headings || headings.length === 0) return;
-            // Add IDs to headings in the DOM
             const addIdsToHeadings = {
                 "TableOfContents.useEffect.addIdsToHeadings": ()=>{
                     headings.forEach({
                         "TableOfContents.useEffect.addIdsToHeadings": (heading)=>{
-                            // Look for heading elements with matching text content
                             const elements = document.querySelectorAll(`h${heading.level}`);
                             elements.forEach({
                                 "TableOfContents.useEffect.addIdsToHeadings": (element)=>{
                                     if (element.textContent?.trim() === heading.text.trim() && !element.id) {
                                         element.id = heading.id;
-                                        // Add smooth scroll offset for fixed header
                                         element.style.scrollMarginTop = '120px';
                                     }
                                 }
@@ -147,9 +145,7 @@ function TableOfContents({ headings, mobile = false }) {
                     }["TableOfContents.useEffect.addIdsToHeadings"]);
                 }
             }["TableOfContents.useEffect.addIdsToHeadings"];
-            // Wait for DOM to be ready, then add IDs
             const timer = setTimeout(addIdsToHeadings, 100);
-            // Intersection Observer for active section tracking
             const observerOptions = {
                 root: null,
                 rootMargin: '-100px 0px -66% 0px',
@@ -163,7 +159,6 @@ function TableOfContents({ headings, mobile = false }) {
             };
             const observer = new IntersectionObserver({
                 "TableOfContents.useEffect": (entries)=>{
-                    // Find the entry with the highest intersection ratio that's intersecting
                     let mostVisible = null;
                     let highestRatio = 0;
                     entries.forEach({
@@ -175,9 +170,24 @@ function TableOfContents({ headings, mobile = false }) {
                         }
                     }["TableOfContents.useEffect"]);
                     if (mostVisible) {
-                        setActiveId(mostVisible.target.id);
+                        const newActiveId = mostVisible.target.id;
+                        setActiveId(newActiveId);
+                        // Scroll the TOC to show the active item
+                        const tocElement = tocRef.current?.querySelector(`[data-id="${newActiveId}"]`);
+                        if (tocElement && tocRef.current) {
+                            const containerTop = tocRef.current.scrollTop;
+                            const containerHeight = tocRef.current.clientHeight;
+                            const elementTop = tocElement.offsetTop;
+                            const elementHeight = tocElement.clientHeight;
+                            // Scroll only if out of view
+                            if (elementTop < containerTop || elementTop + elementHeight > containerTop + containerHeight) {
+                                tocRef.current.scrollTo({
+                                    top: elementTop - containerHeight / 2 + elementHeight / 2,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
                     } else {
-                        // Fallback: check which heading is closest to the top of the viewport
                         const headingElements = headings.map({
                             "TableOfContents.useEffect.headingElements": (h)=>document.getElementById(h.id)
                         }["TableOfContents.useEffect.headingElements"]).filter(Boolean);
@@ -186,7 +196,7 @@ function TableOfContents({ headings, mobile = false }) {
                         headingElements.forEach({
                             "TableOfContents.useEffect": (element)=>{
                                 const rect = element.getBoundingClientRect();
-                                const distance = Math.abs(rect.top - 100); // 100px offset for header
+                                const distance = Math.abs(rect.top - 100);
                                 if (distance < smallestDistance && rect.top <= 200) {
                                     smallestDistance = distance;
                                     closestElement = element;
@@ -199,7 +209,6 @@ function TableOfContents({ headings, mobile = false }) {
                     }
                 }
             }["TableOfContents.useEffect"], observerOptions);
-            // Observe all headings
             const observeHeadings = {
                 "TableOfContents.useEffect.observeHeadings": ()=>{
                     headings.forEach({
@@ -212,9 +221,7 @@ function TableOfContents({ headings, mobile = false }) {
                     }["TableOfContents.useEffect.observeHeadings"]);
                 }
             }["TableOfContents.useEffect.observeHeadings"];
-            // Start observing after a short delay to ensure DOM is ready
             const observeTimer = setTimeout(observeHeadings, 200);
-            // Handle scroll events as backup
             const handleScroll = {
                 "TableOfContents.useEffect.handleScroll": ()=>{
                     if (window.scrollY < 100) {
@@ -252,14 +259,27 @@ function TableOfContents({ headings, mobile = false }) {
     const scrollToHeading = (id)=>{
         const element = document.getElementById(id);
         if (element) {
-            const yOffset = -100; // Account for fixed header
+            const yOffset = -100;
             const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({
                 top: y,
                 behavior: 'smooth'
             });
-            // Update active state immediately for better UX
             setActiveId(id);
+            // Scroll TOC to show the active item
+            const tocElement = tocRef.current?.querySelector(`[data-id="${id}"]`);
+            if (tocElement && tocRef.current) {
+                const containerTop = tocRef.current.scrollTop;
+                const containerHeight = tocRef.current.clientHeight;
+                const elementTop = tocElement.offsetTop;
+                const elementHeight = tocElement.clientHeight;
+                if (elementTop < containerTop || elementTop + elementHeight > containerTop + containerHeight) {
+                    tocRef.current.scrollTo({
+                        top: elementTop - containerHeight / 2 + elementHeight / 2,
+                        behavior: 'smooth'
+                    });
+                }
+            }
         }
         if (mobile) {
             setIsExpanded(false);
@@ -270,10 +290,12 @@ function TableOfContents({ headings, mobile = false }) {
     }
     const tocContent = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "space-y-1",
+        ref: tocRef,
         children: headings.map((heading, index)=>{
             const isActive = activeId === heading.id;
-            const levelIndent = Math.max(0, heading.level - 1) * 12; // 12px per level
+            const levelIndent = Math.max(0, heading.level - 1) * 12;
             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                "data-id": heading.id,
                 onClick: ()=>scrollToHeading(heading.id),
                 className: `
               block w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 
@@ -292,7 +314,7 @@ function TableOfContents({ headings, mobile = false }) {
                                 children: '•'.repeat(Math.min(heading.level - 2, 3))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                lineNumber: 167,
+                                lineNumber: 198,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -302,32 +324,32 @@ function TableOfContents({ headings, mobile = false }) {
                                 children: heading.text
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                lineNumber: 171,
+                                lineNumber: 202,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                        lineNumber: 165,
+                        lineNumber: 196,
                         columnNumber: 13
                     }, this),
                     isActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-6 bg-blue-400 rounded-r-full"
                     }, void 0, false, {
                         fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                        lineNumber: 183,
+                        lineNumber: 213,
                         columnNumber: 15
                     }, this)
                 ]
             }, index, true, {
                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                lineNumber: 152,
+                lineNumber: 182,
                 columnNumber: 11
             }, this);
         })
     }, void 0, false, {
         fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-        lineNumber: 146,
+        lineNumber: 176,
         columnNumber: 5
     }, this);
     if (mobile) {
@@ -355,17 +377,17 @@ function TableOfContents({ headings, mobile = false }) {
                                             d: "M4 6h16M4 10h16M4 14h16M4 18h16"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                            lineNumber: 201,
+                                            lineNumber: 231,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                        lineNumber: 200,
+                                        lineNumber: 230,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                    lineNumber: 199,
+                                    lineNumber: 229,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -375,7 +397,7 @@ function TableOfContents({ headings, mobile = false }) {
                                             children: "Table of Contents"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                            lineNumber: 205,
+                                            lineNumber: 235,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -392,25 +414,25 @@ function TableOfContents({ headings, mobile = false }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                                    lineNumber: 209,
+                                                    lineNumber: 239,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                            lineNumber: 206,
+                                            lineNumber: 236,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                    lineNumber: 204,
+                                    lineNumber: 234,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                            lineNumber: 198,
+                            lineNumber: 228,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -425,18 +447,18 @@ function TableOfContents({ headings, mobile = false }) {
                                 d: "M19 9l-7 7-7-7"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                lineNumber: 222,
+                                lineNumber: 252,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                            lineNumber: 216,
+                            lineNumber: 246,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                    lineNumber: 194,
+                    lineNumber: 224,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -448,27 +470,26 @@ function TableOfContents({ headings, mobile = false }) {
                             children: tocContent
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                            lineNumber: 228,
+                            lineNumber: 258,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                        lineNumber: 227,
+                        lineNumber: 257,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                    lineNumber: 226,
+                    lineNumber: 256,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-            lineNumber: 193,
+            lineNumber: 223,
             columnNumber: 7
         }, this);
     }
-    // Desktop version
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 shadow-xl sticky top-8",
         children: [
@@ -489,17 +510,17 @@ function TableOfContents({ headings, mobile = false }) {
                                 d: "M4 6h16M4 10h16M4 14h16M4 18h16"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                lineNumber: 243,
+                                lineNumber: 272,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                            lineNumber: 242,
+                            lineNumber: 271,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                        lineNumber: 241,
+                        lineNumber: 270,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -509,7 +530,7 @@ function TableOfContents({ headings, mobile = false }) {
                                 children: "Table of Contents"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                lineNumber: 247,
+                                lineNumber: 276,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -521,27 +542,28 @@ function TableOfContents({ headings, mobile = false }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                                lineNumber: 248,
+                                lineNumber: 277,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                        lineNumber: 246,
+                        lineNumber: 275,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                lineNumber: 240,
+                lineNumber: 269,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                ref: tocRef,
                 className: "max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600",
                 children: tocContent
             }, void 0, false, {
                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                lineNumber: 254,
+                lineNumber: 283,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -553,35 +575,35 @@ function TableOfContents({ headings, mobile = false }) {
                             className: "w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                            lineNumber: 260,
+                            lineNumber: 292,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             children: activeId ? `Reading: ${headings.find((h)=>h.id === activeId)?.text || 'Current section'}` : 'Start reading'
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                            lineNumber: 261,
+                            lineNumber: 293,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                    lineNumber: 259,
+                    lineNumber: 291,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-                lineNumber: 258,
+                lineNumber: 290,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/blog/[slug]/TableOfContents.jsx",
-        lineNumber: 239,
+        lineNumber: 268,
         columnNumber: 5
     }, this);
 }
-_s(TableOfContents, "uXxmFsH6FlhtYHaYkxQJwsLh2mA=");
+_s(TableOfContents, "B5s9Px+tqYFAAxQFx2TJRTsN93c=");
 _c = TableOfContents;
 var _c;
 __turbopack_context__.k.register(_c, "TableOfContents");
