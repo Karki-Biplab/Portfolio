@@ -91,8 +91,25 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$blog$2f$compon
 ;
 ;
 const metadata = {
-    title: 'Blog | My Next.js Site',
-    description: 'Read the latest articles and tutorials on web development, design, and technology'
+    title: 'Blog | Biplab Karki',
+    description: 'Read the latest articles and tutorials on web development, machine learning, IoT, and technology by Biplab Karki',
+    keywords: 'Biplab Karki Blog, Web Development, Machine Learning, IoT, Technology Articles',
+    openGraph: {
+        title: 'Blog | Biplab Karki',
+        description: 'Read the latest articles and tutorials on web development, machine learning, IoT, and technology',
+        type: 'website',
+        url: 'https://biplabkarki.com.np/blog'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Blog | Biplab Karki',
+        description: 'Read the latest articles and tutorials on web development, machine learning, IoT, and technology'
+    },
+    icons: {
+        icon: '/logo.png',
+        shortcut: '/logo.png',
+        apple: '/logo.png'
+    }
 };
 function getReadingTime(content) {
     const wordsPerMinute = 200;
@@ -121,7 +138,7 @@ async function getBlogPosts() {
             category: data.category || 'Uncategorized',
             image: data.image || '/profile.png',
             author: data.author || {
-                name: 'Anonymous',
+                name: 'Biplab Karki',
                 avatar: '/profile.png'
             },
             readingTime: data.readingTime || getReadingTime(content)
@@ -135,7 +152,7 @@ async function BlogPageWrapper() {
         allPosts: allPosts
     }, void 0, false, {
         fileName: "[project]/src/app/blog/page.jsx",
-        lineNumber: 56,
+        lineNumber: 73,
         columnNumber: 10
     }, this);
 }

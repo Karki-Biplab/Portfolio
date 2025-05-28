@@ -49,7 +49,7 @@ const useTheme = ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-// MobileMenu.jsx - Fixed version
+// MobileMenu.jsx - Updated with blog placement change
 __turbopack_context__.s({
     "default": (()=>MobileMenu)
 });
@@ -69,6 +69,7 @@ function MobileMenu({ activeSection, theme, toggleTheme, scrollToSection, isOpen
         'about',
         'skills',
         'projects',
+        'blog',
         'contact'
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -133,60 +134,6 @@ function MobileMenu({ activeSection, theme, toggleTheme, scrollToSection, isOpen
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex flex-col p-6 space-y-2 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 h-full",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>{
-                                    BlogHeader();
-                                    onClose();
-                                },
-                                className: `group relative text-left py-4 px-4 rounded-xl text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg ${activeSection === 'blog' ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform scale-105' : 'text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-gray-700 dark:hover:to-gray-600 hover:text-gray-900 dark:hover:text-white'}`,
-                                style: {
-                                    animationDelay: '0s'
-                                },
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center space-x-3",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: `w-2 h-2 rounded-full transition-all duration-300 ${activeSection === 'blog' ? 'bg-white' : 'bg-blue-400 group-hover:bg-blue-500'}`
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                                lineNumber: 61,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "capitalize tracking-wide",
-                                                children: "Blog"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                                lineNumber: 64,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                        lineNumber: 60,
-                                        columnNumber: 13
-                                    }, this),
-                                    activeSection === 'blog' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute right-4 top-1/2 transform -translate-y-1/2",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-2 h-2 bg-white rounded-full animate-pulse"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                            lineNumber: 68,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                        lineNumber: 67,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                lineNumber: 48,
-                                columnNumber: 11
-                            }, this),
                             menuItems.map((section, index)=>{
                                 // Normalize both strings for comparison
                                 const normalizedActiveSection = activeSection?.toLowerCase().trim();
@@ -196,12 +143,16 @@ function MobileMenu({ activeSection, theme, toggleTheme, scrollToSection, isOpen
                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>{
                                         console.log(`Clicking section: ${section}`);
-                                        scrollToSection(section);
+                                        if (section === 'blog') {
+                                            BlogHeader();
+                                        } else {
+                                            scrollToSection(section);
+                                        }
                                         onClose();
                                     },
                                     className: `group relative text-left py-4 px-4 rounded-xl text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg ${isActive ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform scale-105' : 'text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-gray-700 dark:hover:to-gray-600 hover:text-gray-900 dark:hover:text-white'}`,
                                     style: {
-                                        animationDelay: `${(index + 1) * 0.1}s`
+                                        animationDelay: `${index * 0.1}s`
                                     },
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -211,7 +162,7 @@ function MobileMenu({ activeSection, theme, toggleTheme, scrollToSection, isOpen
                                                     className: `w-2 h-2 rounded-full transition-all duration-300 ${isActive ? 'bg-white' : 'bg-blue-400 group-hover:bg-blue-500'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                                    lineNumber: 98,
+                                                    lineNumber: 76,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -219,13 +170,13 @@ function MobileMenu({ activeSection, theme, toggleTheme, scrollToSection, isOpen
                                                     children: section
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                                    lineNumber: 101,
+                                                    lineNumber: 79,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                            lineNumber: 97,
+                                            lineNumber: 75,
                                             columnNumber: 17
                                         }, this),
                                         isActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -234,18 +185,18 @@ function MobileMenu({ activeSection, theme, toggleTheme, scrollToSection, isOpen
                                                 className: "w-2 h-2 bg-white rounded-full animate-pulse"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                                lineNumber: 105,
+                                                lineNumber: 83,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                            lineNumber: 104,
+                                            lineNumber: 82,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, section, true, {
                                     fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                    lineNumber: 83,
+                                    lineNumber: 57,
                                     columnNumber: 15
                                 }, this);
                             }),
@@ -259,7 +210,7 @@ function MobileMenu({ activeSection, theme, toggleTheme, scrollToSection, isOpen
                                             children: "Theme"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                            lineNumber: 115,
+                                            lineNumber: 93,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -271,30 +222,30 @@ function MobileMenu({ activeSection, theme, toggleTheme, scrollToSection, isOpen
                                                 className: "text-blue-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                                lineNumber: 122,
+                                                lineNumber: 100,
                                                 columnNumber: 19
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sun$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sun$3e$__["Sun"], {
                                                 size: 20,
                                                 className: "text-yellow-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                                lineNumber: 123,
+                                                lineNumber: 101,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                            lineNumber: 116,
+                                            lineNumber: 94,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/layout/MobileMenu.jsx",
-                                lineNumber: 113,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -389,10 +340,10 @@ function Navbar({ activeSection, showNavbar }) {
                             className: "hidden md:flex space-x-6 items-center",
                             children: [
                                 [
-                                    'blog',
                                     'about',
                                     'skills',
                                     'projects',
+                                    'blog',
                                     'contact'
                                 ].map((section)=>section === 'blog' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/blog",

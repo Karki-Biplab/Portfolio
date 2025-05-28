@@ -39,7 +39,7 @@ export default function Navbar({ activeSection, showNavbar }) {
          
           {/* Desktop Navigation */}
          <div className="hidden md:flex space-x-6 items-center">
-    {['blog', 'about', 'skills', 'projects', 'contact'].map(section => (
+    {['about', 'skills', 'projects', 'blog', 'contact'].map(section => (
       section === 'blog' ? (
         <Link 
           key={section} 

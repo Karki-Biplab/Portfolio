@@ -129,7 +129,7 @@ export default function Projects() {
           {!allProjectsVisible ? (
             <button
               onClick={handleShowMore}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 relative overflow-hidden group hover:shadow-glow"
+              className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 relative overflow-hidden group hover:shadow-glow"
             >
               <span className="relative z-10">Show More Projects</span>
               <span
@@ -143,7 +143,7 @@ export default function Projects() {
           ) : (
             <button
               onClick={handleShowLess}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 relative overflow-hidden group hover:shadow-glow"
+              className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 relative overflow-hidden group hover:shadow-glow"
             >
               <span className="relative z-10">Show Less</span>
               <span

@@ -62,7 +62,8 @@ export default function About() {
             style={{ pointerEvents: 'none' }}
           />
           </div>
-          <div className="text-lg leading-relaxed space-y-6 dark:text-gray-300">
+          <div className="text-base sm:text-lg leading-relaxed space-y-6 dark:text-gray-300">
+
             <p>
               I am a passionate and self-motivated developer who thrives on learning through hands-on experience.
               I enjoy solving real-world problems, collaborating with like-minded individuals, and refining my
@@ -93,13 +94,14 @@ export default function About() {
                 download 
                 className="
                   group flex items-center justify-center
-                  bg-blue-600 hover:bg-blue-700 text-white font-semibold 
+                  bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold 
                   rounded-lg shadow-lg hover:shadow-xl
                   transition-all duration-300
                   px-3 py-2 md:px-5 md:py-3
                   text-sm md:text-base
                   border-2 border-transparent hover:border-blue-400
                 "
+
               >
                 <svg 
                   className="w-4 h-4 md:w-5 md:h-5 mr-2" 

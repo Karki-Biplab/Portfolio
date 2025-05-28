@@ -7,6 +7,7 @@ import Header from './components/sections/Header';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
+import BlogPreview from './components/sections/BlogPreview';
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
 import useScrollSpy from './hooks/useScrollSpy';
@@ -15,7 +16,7 @@ import Head from 'next/head';
 import Experience from './components/sections/Experience';
 
 export default function App() {
-  const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+  const sections = ['home', 'about', 'skills', 'projects', 'blog', 'contact'];
   const { activeSection, showNavbar } = useScrollSpy(sections);
 
   useEffect(() => {
@@ -117,6 +118,7 @@ export default function App() {
           <Skills />
           <Projects />
           <Experience />
+          <BlogPreview />
           <Contact />
           <Footer />
         </div>

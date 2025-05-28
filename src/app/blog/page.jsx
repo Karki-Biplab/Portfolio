@@ -4,8 +4,25 @@ import matter from 'gray-matter';
 import BlogPage from './components/MainPage';
 
 export const metadata = {
-  title: 'Blog | My Next.js Site',
-  description: 'Read the latest articles and tutorials on web development, design, and technology',
+  title: 'Blog | Biplab Karki',
+  description: 'Read the latest articles and tutorials on web development, machine learning, IoT, and technology by Biplab Karki',
+  keywords: 'Biplab Karki Blog, Web Development, Machine Learning, IoT, Technology Articles',
+  openGraph: {
+    title: 'Blog | Biplab Karki',
+    description: 'Read the latest articles and tutorials on web development, machine learning, IoT, and technology',
+    type: 'website',
+    url: 'https://biplabkarki.com.np/blog',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Biplab Karki',
+    description: 'Read the latest articles and tutorials on web development, machine learning, IoT, and technology',
+  },
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 function getReadingTime(content) {
@@ -42,7 +59,7 @@ async function getBlogPosts() {
         description: data.description || 'No description provided',
         category: data.category || 'Uncategorized',
         image: data.image || '/profile.png',
-        author: data.author || { name: 'Anonymous', avatar: '/profile.png' },
+        author: data.author || { name: 'Biplab Karki', avatar: '/profile.png' },
         readingTime: data.readingTime || getReadingTime(content),
       };
     });
@@ -55,5 +72,3 @@ export default async function BlogPageWrapper() {
   
   return <BlogPage allPosts={allPosts} />;
 }
-
-

@@ -1,4 +1,4 @@
-// MobileMenu.jsx - Fixed version
+// MobileMenu.jsx - Updated with blog placement change
 "use client"
 import { Moon, Sun } from 'lucide-react';
 
@@ -10,7 +10,7 @@ export default function MobileMenu({ activeSection, theme, toggleTheme, scrollTo
   // Debug log to see what activeSection we're getting
   console.log('MobileMenu activeSection:', activeSection);
 
-  const menuItems = ['about', 'skills', 'projects', 'contact'];
+  const menuItems = ['about', 'skills', 'projects', 'blog', 'contact'];
 
   return (
     <>
@@ -44,33 +44,7 @@ export default function MobileMenu({ activeSection, theme, toggleTheme, scrollTo
 
         {/* Menu items */}
         <div className="flex flex-col p-6 space-y-2 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 h-full">
-          {/* Blog Button */}
-          <button
-            onClick={() => {
-              BlogHeader();
-              onClose();
-            }} 
-            className={`group relative text-left py-4 px-4 rounded-xl text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg ${
-              activeSection === 'blog' 
-                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform scale-105' 
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-gray-700 dark:hover:to-gray-600 hover:text-gray-900 dark:hover:text-white'
-            }`}
-            style={{ animationDelay: '0s' }}
-          >
-            <div className="flex items-center space-x-3">
-              <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                activeSection === 'blog' ? 'bg-white' : 'bg-blue-400 group-hover:bg-blue-500'
-              }`} />
-              <span className="capitalize tracking-wide">Blog</span>
-            </div>
-            {activeSection === 'blog' && (
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-              </div>
-            )}
-          </button>
-
-          {/* Other Menu Items */}
+          {/* Menu Items */}
           {menuItems.map((section, index) => {
             // Normalize both strings for comparison
             const normalizedActiveSection = activeSection?.toLowerCase().trim();
@@ -84,7 +58,11 @@ export default function MobileMenu({ activeSection, theme, toggleTheme, scrollTo
                 key={section}
                 onClick={() => {
                   console.log(`Clicking section: ${section}`);
-                  scrollToSection(section);
+                  if (section === 'blog') {
+                    BlogHeader();
+                  } else {
+                    scrollToSection(section);
+                  }
                   onClose();
                 }} 
                 className={`group relative text-left py-4 px-4 rounded-xl text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg ${
@@ -92,7 +70,7 @@ export default function MobileMenu({ activeSection, theme, toggleTheme, scrollTo
                     ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform scale-105' 
                     : 'text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-gray-700 dark:hover:to-gray-600 hover:text-gray-900 dark:hover:text-white'
                 }`}
-                style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-center space-x-3">
                   <div className={`w-2 h-2 rounded-full transition-all duration-300 ${

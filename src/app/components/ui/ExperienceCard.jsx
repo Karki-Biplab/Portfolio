@@ -4,7 +4,7 @@ import { Briefcase } from 'lucide-react';
 export default function ExperienceCard({ position, company, location, period, description }) {
   return (
     <div className="bg-gray-100 dark:bg-gray-900 p-8 rounded-lg shadow-lg">
-      <div className="flex items-start">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
         <div className="p-4 rounded-full bg-blue-100 dark:bg-blue-900 mr-4">
           <Briefcase className="w-8 h-8 text-blue-600 dark:text-blue-400" />
         </div>
