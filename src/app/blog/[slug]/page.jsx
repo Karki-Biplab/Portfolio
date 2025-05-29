@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReadingProgress from './ReadingProgress';
 import TableOfContents from './TableOfContents';
+import BlogShare from './BlogShare';
 import './blog-post.css';
 
 // Configure marked for better rendering
@@ -261,6 +262,9 @@ export default function BlogPost({ params }) {
       notFound();
     }
     
+    // Construct the current URL for sharing
+    const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://biplabkarki.com.np'}/blog/${slug}`;
+    
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
         <ReadingProgress />
@@ -373,16 +377,20 @@ export default function BlogPost({ params }) {
               </div>
 
               {/* Article Content */}
-              {/* Article Content */}
-<article className="blog-content bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl border border-gray-700/50">
-  <div 
-    className="prose prose-lg max-w-none"
-    dangerouslySetInnerHTML={{ __html: post.content }} 
-  />
-</article>
+              <article className="blog-content bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl border border-gray-700/50 mb-12">
+                <div 
+                  className="prose prose-lg max-w-none"
+                  dangerouslySetInnerHTML={{ __html: post.content }} 
+                />
+              </article>
+
+              {/* Share Section */}
+              <div className="mb-12">
+                <BlogShare post={post} currentUrl={currentUrl} />
+              </div>
 
               {/* Navigation Footer */}
-              <div className="mt-12 text-center">
+              <div className="text-center">
                 <Link 
                   href="/blog"
                   className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200 hover:scale-105 shadow-lg"
