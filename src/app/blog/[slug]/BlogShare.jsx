@@ -1,10 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function BlogShare({ post, currentUrl }) {
   const [copied, setCopied] = useState(false);
   const [shareMenuOpen, setShareMenuOpen] = useState(false);
+  const [isNativeShareSupported, setIsNativeShareSupported] = useState(false);
+
+  // Check for native share support after component mounts
+  useEffect(() => {
+    setIsNativeShareSupported(typeof navigator !== 'undefined' && 'share' in navigator);
+  }, []);
 
   // Construct sharing URLs
   const shareData = {
@@ -200,8 +206,8 @@ export default function BlogShare({ post, currentUrl }) {
             </span>
           </button>
 
-          {/* Native Share (if supported) */}
-          {typeof navigator !== 'undefined' && navigator.share && (
+          {/* Native Share (if supported) - Only render after mount */}
+          {isNativeShareSupported && (
             <button
               onClick={handleNativeShare}
               className="flex-1 flex items-center justify-center gap-3 p-3 bg-purple-500/20 hover:bg-purple-500/30 rounded-xl border border-purple-500/30 hover:border-purple-400 transition-all duration-200 group"

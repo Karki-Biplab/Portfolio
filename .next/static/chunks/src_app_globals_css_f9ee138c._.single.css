@@ -1256,10 +1256,6 @@
     }
   }
 
-  .bg-blue-700 {
-    background-color: var(--color-blue-700);
-  }
-
   .bg-blue-700\/20 {
     background-color: #1447e633;
   }
@@ -1286,10 +1282,6 @@
     .bg-gray-500\/20 {
       background-color: color-mix(in oklab, var(--color-gray-500) 20%, transparent);
     }
-  }
-
-  .bg-gray-600 {
-    background-color: var(--color-gray-600);
   }
 
   .bg-gray-700 {
@@ -1376,10 +1368,6 @@
     .bg-purple-500\/20 {
       background-color: color-mix(in oklab, var(--color-purple-500) 20%, transparent);
     }
-  }
-
-  .bg-purple-600 {
-    background-color: var(--color-purple-600);
   }
 
   .bg-red-50 {
@@ -2418,12 +2406,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-blue-800:hover {
-      background-color: var(--color-blue-800);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-gray-100:hover {
       background-color: var(--color-gray-100);
     }
@@ -2456,12 +2438,6 @@
       .hover\:bg-gray-600\/50:hover {
         background-color: color-mix(in oklab, var(--color-gray-600) 50%, transparent);
       }
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-gray-700:hover {
-      background-color: var(--color-gray-700);
     }
   }
 
@@ -2502,12 +2478,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-gray-800:hover {
-      background-color: var(--color-gray-800);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-green-500\/30:hover {
       background-color: #00c7584d;
     }
@@ -2540,12 +2510,6 @@
       .hover\:bg-purple-500\/30:hover {
         background-color: color-mix(in oklab, var(--color-purple-500) 30%, transparent);
       }
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-purple-700:hover {
-      background-color: var(--color-purple-700);
     }
   }
 
